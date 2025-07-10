@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     "Guardaria, organização, estilo e praticidade. Serviços premium pensados para quem valoriza qualidade e tempo. Cadastre-se e tenha mais tempo para o que importa.",
   keywords:
     "guardaria, surfe, organização, estilo, serviços premium, praia, surfe profissional",
+  icons: {
+    icon: "/favicon_teyu.png",
+    shortcut: "/favicon_teyu.png",
+    apple: "/favicon_teyu.png"
+  },
   openGraph: {
     title: "Teyu Guardaria | Viva a experiência completa do surfe",
     description:
@@ -52,11 +57,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head>
-        {/* Favicon */}
-        <link rel="icon" href="/favicon_teyu.png" type="image/png" />
-        <link rel="canonical" href="https://www.teyuguardaria.com" />
-      </head>
       <body
         className={`${openSans.variable} ${sourceSans3.variable} antialiased`}
         suppressHydrationWarning={true}

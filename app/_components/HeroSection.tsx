@@ -1,12 +1,13 @@
 "use client";
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {ArrowRight, CheckCircle} from "lucide-react";
 import {Button} from "../_components/ui/button";
 import SignupModal from "./SignupModal";
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
   // const [counts, setCounts] = useState({
   //   clients: 0,
   //   services: 0,
@@ -34,6 +35,15 @@ const HeroSection = () => {
       });
     }
   };
+
+  // Iniciar animações quando o componente montar
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsAnimated(true);
+    }, 100); // Pequeno delay para garantir que o componente foi montado
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Animation for counting numbers
   // useEffect(() => {
@@ -75,15 +85,33 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto text-center">
           {/* Content */}
-          <div className="space-y-10 animate-fade-in">
+          <div className="space-y-10">
             <div className="space-y-6">
               <h1 className="font-open-sans text-[#5e4e3d] font-bold text-3xl md:text-5xl lg:text-5xl leading-tight">
-                Mais tempo no mar,
-                <span className="text-[#5e4e3d] block">
+                <span
+                  className={`block ${
+                    isAnimated ? "animate-slide-in-from-right" : "animate-initial-right"
+                  }`}
+                >
+                  Mais tempo no mar,
+                </span>
+                <span
+                  className={`block ${
+                    isAnimated
+                      ? "animate-slide-in-from-right animate-delay-300"
+                      : "animate-initial-right"
+                  }`}
+                >
                   Menos preocupação com a prancha.
                 </span>
               </h1>
-              <p className="font-source text-sm md:text-xl text-[#5f5f5e] leading-relaxed max-w-3xl mx-auto">
+              <p
+                className={`font-source text-sm md:text-xl text-[#5f5f5e] leading-relaxed max-w-3xl mx-auto ${
+                  isAnimated
+                    ? "animate-slide-in-from-right-soft animate-delay-600"
+                    : "animate-initial-right-soft"
+                }`}
+              >
                 Guarde, repare e viva a experiência completa do surfe <br /> em um único
                 lugar, fácil, prático e seguro.
               </p>
@@ -104,7 +132,13 @@ const HeroSection = () => {
             </div> */}
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div
+              className={`flex flex-col sm:flex-row gap-4 justify-center ${
+                isAnimated
+                  ? "animate-slide-in-from-right-soft animate-delay-900"
+                  : "animate-initial-right-soft"
+              }`}
+            >
               <Button
                 onClick={handleOpenModal}
                 className="bg-[#e3b653] hover:bg-[#71a2c1] text-[#ffffff] font-source font-bold px-8 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-xl"
@@ -162,7 +196,13 @@ const HeroSection = () => {
               ].map((benefit, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-2 bg-[#5f5f5e]/10 px-4 py-2 rounded-full"
+                  className={`flex items-center space-x-2 bg-[#5f5f5e]/10 px-4 py-2 rounded-full ${
+                    isAnimated
+                      ? `animate-slide-in-from-right-soft animate-delay-${
+                          1200 + index * 200
+                        }`
+                      : "animate-initial-right-soft"
+                  }`}
                 >
                   <CheckCircle className="w-5 h-5 text-[#5f5f5e]" />
                   <span className="font-source text-sm text-[#5f5f5e]">{benefit}</span>
