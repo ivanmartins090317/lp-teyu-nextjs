@@ -1,13 +1,13 @@
 "use client";
 
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {ArrowRight, CheckCircle} from "lucide-react";
 import {Button} from "../_components/ui/button";
 import SignupModal from "./SignupModal";
+import {motion} from "framer-motion";
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isAnimated, setIsAnimated] = useState(false);
   // const [counts, setCounts] = useState({
   //   clients: 0,
   //   services: 0,
@@ -15,16 +15,8 @@ const HeroSection = () => {
   //   satisfaction: 0
   // });
 
-  const handleOpenModal = () => {
-    console.log("Tentando abrir modal...");
-    setIsModalOpen(true);
-    console.log("Estado do modal após setIsModalOpen(true):", true);
-  };
-
-  const handleCloseModal = () => {
-    console.log("Fechando modal...");
-    setIsModalOpen(false);
-  };
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
   const scrollToServices = () => {
     const servicesSection = document.getElementById("servicos");
@@ -36,14 +28,15 @@ const HeroSection = () => {
     }
   };
 
-  // Iniciar animações quando o componente montar
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimated(true);
-    }, 100); // Pequeno delay para garantir que o componente foi montado
+  // Benefits data
+  const benefits = [
+    "Pranchas seguras e prontas sempre que precisar",
+    "Reparos e manutenção express",
+    "Espaço confortável com café e loja exclusiva"
+  ];
 
-    return () => clearTimeout(timer);
-  }, []);
+  // Create duplicated benefits for infinite scroll
+  const duplicatedBenefits = [...benefits, ...benefits];
 
   // Animation for counting numbers
   // useEffect(() => {
@@ -81,37 +74,19 @@ const HeroSection = () => {
   // }, []);
 
   return (
-    <section className="bg-[#e5dfda] text-[#5e4e3d] py-20 md:pt-30 md:pb-10 relative overflow-hidden">
+    <section className="bg-[#e5dfda] text-[#5e4e3d] py-20 md:pt-30 md:pb-12 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto text-center">
           {/* Content */}
-          <div className="space-y-10">
+          <div className="space-y-10 animate-fade-in">
             <div className="space-y-6">
-              <h1 className="font-open-sans text-[#5e4e3d] font-bold text-3xl md:text-5xl lg:text-5xl leading-tight">
-                <span
-                  className={`block ${
-                    isAnimated ? "animate-slide-in-from-right" : "animate-initial-right"
-                  }`}
-                >
-                  Mais tempo no mar,
-                </span>
-                <span
-                  className={`block ${
-                    isAnimated
-                      ? "animate-slide-in-from-right animate-delay-300"
-                      : "animate-initial-right"
-                  }`}
-                >
+              <h1 className="font-open-sans text-[#5e4e3d] font-bold text-3xl md:text-4xl lg:text-5xl leading-tight">
+                Mais tempo no mar,
+                <span className="text-[#5e4e3d] block">
                   Menos preocupação com a prancha.
                 </span>
               </h1>
-              <p
-                className={`font-source text-sm md:text-xl text-[#5f5f5e] leading-relaxed max-w-3xl mx-auto ${
-                  isAnimated
-                    ? "animate-slide-in-from-right-soft animate-delay-600"
-                    : "animate-initial-right-soft"
-                }`}
-              >
+              <p className="font-source text-sm md:text-xl text-[#5f5f5e] leading-relaxed max-w-3xl mx-auto">
                 Guarde, repare e viva a experiência completa do surfe <br /> em um único
                 lugar, fácil, prático e seguro.
               </p>
@@ -132,13 +107,7 @@ const HeroSection = () => {
             </div> */}
 
             {/* CTA Buttons */}
-            <div
-              className={`flex flex-col sm:flex-row gap-4 justify-center ${
-                isAnimated
-                  ? "animate-slide-in-from-right-soft animate-delay-900"
-                  : "animate-initial-right-soft"
-              }`}
-            >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={handleOpenModal}
                 className="bg-[#e3b653] hover:bg-[#71a2c1] text-[#ffffff] font-source font-bold px-8 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-xl"
@@ -148,8 +117,8 @@ const HeroSection = () => {
               </Button>
               <Button
                 onClick={scrollToServices}
-                variant="secondary"
-                className=" text-[#5e4e3d] hover:bg-[#e3b653]/20 hover:text-[#5e4e3d] border border-[#5e4e3d] font-source font-semibold px-8 py-4 rounded-lg text-lg transition-all"
+                variant="outline"
+                className=" text-[#5e4e3d] hover:bg-[#e3b653]/20 hover:text-[#5e4e3d] font-source font-semibold px-8 py-4 rounded-lg text-lg transition-all"
               >
                 Nossos Serviços
               </Button>
@@ -188,26 +157,54 @@ const HeroSection = () => {
             </div> */}
 
             {/* Benefits */}
-            <div className="flex flex-wrap justify-center gap-6">
-              {[
-                "Pranchas seguras e prontas sempre que precisar",
-                "Reparos e manutenção express",
-                "Espaço confortável com café e loja exclusiva"
-              ].map((benefit, index) => (
+            {/* Desktop Version */}
+            <div className="hidden md:flex flex-wrap justify-center gap-6">
+              {benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className={`flex items-center space-x-2 bg-[#5f5f5e]/10 px-4 py-2 rounded-full ${
-                    isAnimated
-                      ? `animate-slide-in-from-right-soft animate-delay-${
-                          1200 + index * 200
-                        }`
-                      : "animate-initial-right-soft"
-                  }`}
+                  className="flex items-center space-x-2 bg-[#5f5f5e]/10 px-4 py-2 rounded-full"
                 >
                   <CheckCircle className="w-5 h-5 text-[#5f5f5e]" />
                   <span className="font-source text-sm text-[#5f5f5e]">{benefit}</span>
                 </div>
               ))}
+            </div>
+
+            {/* Mobile Version - Infinite Scroll */}
+            <div className="md:hidden relative overflow-hidden">
+              {/* Blur overlays */}
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#e5dfda] to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#e5dfda] to-transparent z-10 pointer-events-none"></div>
+
+              {/* Scrolling container */}
+              <div className="overflow-hidden">
+                <motion.div
+                  className="flex gap-4 whitespace-nowrap"
+                  animate={{
+                    x: [0, -100 * benefits.length + "%"]
+                  }}
+                  transition={{
+                    x: {
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      duration: 20, // Velocidade suave - 20 segundos para completar um ciclo
+                      ease: "linear"
+                    }
+                  }}
+                >
+                  {duplicatedBenefits.map((benefit, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center space-x-2 bg-[#5f5f5e]/10 px-4 py-2 rounded-full flex-shrink-0"
+                    >
+                      <CheckCircle className="w-5 h-5 text-[#5f5f5e]" />
+                      <span className="font-source text-sm text-[#5f5f5e] whitespace-nowrap">
+                        {benefit}
+                      </span>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>

@@ -81,7 +81,7 @@ const FinalCTA = () => {
               </button>
               <button
                 onClick={handleWhatsAppClick}
-                className="border-2 border-white text-white hover:bg-white hover:text-primary font-source font-semibold px-12 py-4 rounded-lg text-lg transition-all"
+                className="border-1 border-[#5e4e3d] text-[#5e4e3d] hover:bg-[#e3b653]/20 hover:text-[#5e4e3d] font-source font-semibold px-12 py-4 rounded-lg text-lg transition-all"
               >
                 Falar com Especialista
               </button>

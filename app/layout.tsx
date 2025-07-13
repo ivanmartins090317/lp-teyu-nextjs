@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import {Open_Sans, Source_Sans_3} from "next/font/google";
 import "./globals.css";
+import {AuthProvider} from "./_contexts/AuthContext";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -61,7 +62,7 @@ export default function RootLayout({
         className={`${openSans.variable} ${sourceSans3.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
