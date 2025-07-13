@@ -1,5 +1,7 @@
+"use client";
+
 import React, {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {useRouter} from "next/navigation";
 import {useAuth} from "../_contexts/AuthContext";
 import {Button} from "../_components/ui/button";
 import {Input} from "../_components/ui/input";
@@ -18,7 +20,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const {login} = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   const {toast} = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -32,7 +34,7 @@ const Login = () => {
           title: "Login realizado com sucesso",
           description: "Redirecionando para a página de contratos..."
         });
-        navigate("/contracts");
+        router.push("/contracts");
       } else {
         toast({
           title: "Erro no login",
