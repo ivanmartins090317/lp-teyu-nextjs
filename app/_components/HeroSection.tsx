@@ -4,7 +4,13 @@ import React, {useState} from "react";
 import {ArrowRight, CheckCircle} from "lucide-react";
 import {Button} from "../_components/ui/button";
 import SignupModal from "./SignupModal";
-import {motion} from "framer-motion";
+import dynamic from "next/dynamic";
+
+// Importação dinâmica do framer-motion para evitar erro de client boundary
+const MotionDiv = dynamic(() => import("framer-motion").then((mod) => mod.motion.div), {
+  ssr: false,
+  loading: () => <div className="flex gap-4 whitespace-nowrap" />
+});
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -178,7 +184,7 @@ const HeroSection = () => {
 
               {/* Scrolling container */}
               <div className="overflow-hidden">
-                <motion.div
+                <MotionDiv
                   className="flex gap-4 whitespace-nowrap"
                   animate={{
                     x: [0, -100 * benefits.length + "%"]
@@ -203,7 +209,7 @@ const HeroSection = () => {
                       </span>
                     </div>
                   ))}
-                </motion.div>
+                </MotionDiv>
               </div>
             </div>
           </div>

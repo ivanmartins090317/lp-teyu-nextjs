@@ -1,5 +1,14 @@
+"use client";
+
 import React from "react";
 import {Smartphone, Calendar, UserCheck, Star} from "lucide-react";
+import dynamic from "next/dynamic";
+
+// Importação dinâmica do framer-motion para evitar erro de client boundary
+const MotionDiv = dynamic(() => import("framer-motion").then((mod) => mod.motion.div), {
+  ssr: false,
+  loading: () => <div className="flex gap-4 whitespace-nowrap" />
+});
 
 const HowItWorks = () => {
   const steps = [
@@ -39,6 +48,25 @@ const HowItWorks = () => {
       shadowColor: "[#e3b653]"
     }
   ];
+
+  // Stats data
+  const stats = [
+    {
+      value: "2min",
+      label: "Tempo médio de agendamento"
+    },
+    {
+      value: "24h",
+      label: "Disponibilidade de horários"
+    },
+    {
+      value: "100%",
+      label: "Profissionais verificados"
+    }
+  ];
+
+  // Create duplicated stats for infinite scroll
+  const duplicatedStats = [...stats, ...stats];
 
   return (
     <section
@@ -108,30 +136,57 @@ const HowItWorks = () => {
         </div>
 
         {/* Enhanced Stats Section */}
-        <div className="mt-24 grid md:grid-cols-3 gap-8 animate-fade-in">
-          <div className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-neutral-100">
-            <div className="text-4xl font-open-sans font-bold text-[#e3b653] mb-3">
-              2min
+        {/* Desktop Version */}
+        <div className="mt-24 hidden md:grid md:grid-cols-3 gap-8 animate-fade-in">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-neutral-100"
+            >
+              <div className="text-4xl font-open-sans font-bold text-[#e3b653] mb-3">
+                {stat.value}
+              </div>
+              <div className="font-source text-[#5f5f5e] text-lg">{stat.label}</div>
             </div>
-            <div className="font-source text-[#5f5f5e] text-lg">
-              Tempo médio de agendamento
-            </div>
-          </div>
-          <div className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-neutral-100">
-            <div className="text-4xl font-open-sans font-bold text-[#e3b653] mb-3">
-              24h
-            </div>
-            <div className="font-source text-[#5f5f5e] text-lg">
-              Disponibilidade de horários
-            </div>
-          </div>
-          <div className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-neutral-100">
-            <div className="text-4xl font-open-sans font-bold text-[#e3b653] mb-3">
-              100%
-            </div>
-            <div className="font-source text-[#5f5f5e] text-lg">
-              Profissionais verificados
-            </div>
+          ))}
+        </div>
+
+        {/* Mobile Version - Infinite Scroll */}
+        <div className="mt-24 md:hidden relative overflow-hidden">
+          {/* Blur overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-neutral-50 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-neutral-50 to-transparent z-10 pointer-events-none"></div>
+
+          {/* Scrolling container */}
+          <div className="overflow-hidden pb-5">
+            <MotionDiv
+              className="flex gap-6 whitespace-nowrap"
+              animate={{
+                x: [0, -100 * stats.length + "%"]
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 20, // Velocidade suave - 15 segundos para completar um ciclo
+                  ease: "linear"
+                }
+              }}
+            >
+              {duplicatedStats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-center p-6 bg-white rounded-xl shadow-lg border border-neutral-100 flex-shrink-0 min-w-[250px]"
+                >
+                  <div className="text-3xl font-open-sans font-bold text-[#e3b653] mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="font-source text-[#5f5f5e] text-sm whitespace-normal">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </MotionDiv>
           </div>
         </div>
 
