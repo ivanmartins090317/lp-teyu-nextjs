@@ -179,7 +179,7 @@ export const useContractsManagement = () => {
     console.log("useContractsManagement: Hook carregado, iniciando busca de dados...");
     fetchContracts();
     fetchUsers();
-  }, []);
+  }, [fetchContracts, fetchUsers]);
 
   return {
     contracts,
