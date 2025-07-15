@@ -68,8 +68,8 @@ const ServicesOverview = () => {
             Nossos Serviços
           </h2>
           <p className="font-source text-lg md:text-xl text-[#5f5f5e] max-w-3xl mx-auto leading-relaxed">
-            Mais de 35 tipos de serviços especializados para transformar sua casa em um
-            ambiente premium. Tudo com a qualidade que você merece.
+            Mais de 15 tipos de serviços especializados para transformar sue dia de surf.
+            Tudo com a qualidade que você merece.
           </p>
         </div>
 
