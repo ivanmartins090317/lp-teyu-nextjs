@@ -1,6 +1,6 @@
 import React from "react";
 import {Clock, Shield, Star, Smartphone} from "lucide-react";
-import {Card, CardContent} from "@/components/ui/card";
+import {Card, CardContent} from "../_components/ui/card";
 
 const ValueProposition = () => {
   const benefits = [
