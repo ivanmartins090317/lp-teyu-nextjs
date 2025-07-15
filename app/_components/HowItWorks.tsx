@@ -88,8 +88,8 @@ const HowItWorks = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 relative">
             {/* Modern Connection Line */}
-            <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-1 bg-gradient-to-r from-blue-500 via-green-500 via-orange-500 to-purple-500 rounded-full z-0 opacity-30">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-green-500 via-orange-500 to-purple-500 rounded-full animate-pulse"></div>
+            <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-1 bg-gradient-to-r from-blue-500 via-green-500 to-purple-500 rounded-full z-0 opacity-30">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-green-500 to-purple-500 rounded-full animate-pulse"></div>
             </div>
 
             {steps.map((step, index) => (
