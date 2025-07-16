@@ -3,6 +3,7 @@
 import React, {useState} from "react";
 import {Menu, X} from "lucide-react";
 import {Button} from "../_components/ui/button";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,13 +14,22 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-[#71A2C1] to-[#e3b653] rounded-xl flex items-center justify-center shadow-md">
+            {/* <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-[#71A2C1] to-[#e3b653] rounded-xl flex items-center justify-center shadow-md">
               <span className="text-white font-playfair font-bold text-xl lg:text-2xl">
                 T
               </span>
+            </div> */}
+            <div className="w-10 h-10 lg:w-12 lg:h-12">
+              <Image
+                src="/favico_teyu_01.png"
+                alt="logo"
+                width={40}
+                height={40}
+                className="w-full h-auto"
+              />
             </div>
             <div>
-              <h1 className="font-playfair font-bold text-xl lg:text-2xl text-[#5e4e3d]">
+              <h1 className="font-playfair font-bold text-xl lg:text-2xl text-[#5e4e3d] hidden md:block">
                 Teyu
               </h1>
               <span className="text-xs lg:text-sm text-neutral-600 hidden sm:block">
@@ -69,7 +79,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-neutral-100 transition-colors"
+            className="lg:hidden p-2 text-[#5e4e3d] rounded-lg hover:bg-neutral-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -83,27 +93,27 @@ const Header = () => {
             <nav className="flex flex-col space-y-1 px-4 py-6">
               <a
                 href="#servicos"
-                className="text-neutral-700 hover:text-primary hover:bg-neutral-50 transition-all font-source font-medium py-3 px-4 rounded-lg"
+                className="text-[#5e4e3d] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Serviços
               </a>
               <a
                 href="#como-funciona"
-                className="text-neutral-700 hover:text-primary hover:bg-neutral-50 transition-all font-source font-medium py-3 px-4 rounded-lg"
+                className="text-[#5e4e3d] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Como Funciona
               </a>
               <a
                 href="#depoimentos"
-                className="text-neutral-700 hover:text-primary hover:bg-neutral-50 transition-all font-source font-medium py-3 px-4 rounded-lg"
+                className="text-[#5e4e3d] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Depoimentos
               </a>
               <div className="pt-4 border-t border-neutral-200 mt-4">
-                <Button className="w-full bg-gold hover:bg-gold-600 text-white font-source font-semibold px-6 py-3 rounded-xl transition-all shadow-md">
+                <Button className="w-full bg-[#5e4e3d] hover:bg-[#5e4e3d]/80 text-white font-source font-semibold px-6 py-3 rounded-xl transition-all shadow-md">
                   Começar Agora
                 </Button>
               </div>
