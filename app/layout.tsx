@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   keywords:
     "guardaria, surfe, organização, estilo, serviços premium, praia, surfe profissional",
   icons: {
-    icon: "/favicon_teyu.png",
-    shortcut: "/favicon_teyu.png",
-    apple: "/favicon_teyu.png"
+    icon: "/favico_teyu_white.png",
+    shortcut: "/favico_teyu_white.png",
+    apple: "/favico_teyu_white.png"
   },
   openGraph: {
     title: "Teyu Guardaria | Viva a experiência completa do surfe",

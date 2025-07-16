@@ -1,5 +1,6 @@
 import React from "react";
 import {Phone, Mail, MapPin, Instagram, Facebook, Linkedin} from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,17 +13,25 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#71A2C1] to-[#e3b653] rounded-lg flex items-center justify-center">
-                <span className="text-white font-playfair font-bold text-xl">T</span>
+              {/* <div className="w-10 h-10  rounded-lg flex items-center justify-center"></div> */}
+              <div className="w-10 h-10 lg:w-12 lg:h-12">
+                <Image
+                  src="/favico_teyu_white.png"
+                  alt="logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-auto"
+                />
               </div>
               <div>
-                <h3 className="font-playfair font-bold text-xl">Teyu</h3>
                 <span className="text-xs text-white">Guardaria & Prancharia</span>
               </div>
+              <div></div>
             </div>
+
             <p className="font-source text-neutral-300 leading-relaxed">
-              Transformando casas em ambientes premium através de serviços especializados
-              e profissionais qualificados. Sua satisfação é nossa prioridade.
+              Transformamos a forma de viver o surfe: cuidado premium, profissionais
+              qualificados e liberdade total para você aproveitar cada onda.
             </p>
             <div className="flex space-x-4">
               <a
