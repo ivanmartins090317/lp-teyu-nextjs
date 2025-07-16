@@ -51,6 +51,13 @@ const Header = () => {
               Depoimentos
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#5e4e3d] transition-all duration-300 group-hover:w-full"></span>
             </a>
+            <a
+              href="#"
+              className=" text-[#5f5f5e] hover:text-[#5e4e3d] transition-colors font-source font-medium text-sm xl:text-base relative group"
+            >
+              Sobre nós
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#5e4e3d] transition-all duration-300 group-hover:w-full"></span>
+            </a>
           </nav>
 
           {/* CTA Button */}
