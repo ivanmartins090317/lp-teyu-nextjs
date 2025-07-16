@@ -3,6 +3,7 @@
 import React from "react";
 import {Smartphone, Calendar, UserCheck, Star} from "lucide-react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 // Importação dinâmica do framer-motion para evitar erro de client boundary
 const MotionDiv = dynamic(() => import("framer-motion").then((mod) => mod.motion.div), {
@@ -194,15 +195,39 @@ const HowItWorks = () => {
         <div className="mt-20 bg-gradient-to-br from-[#5e4e3d] via-[#5e4e3d] to-[#5e4e3d] rounded-xl p-12 md:p-16 text-white text-center animate-scale-in relative overflow-hidden">
           {/* Background Decorations */}
           <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute top-10 left-10 w-20 h-20 bg-[#e3b653] opacity-10 rounded-full animate-pulse"></div>
+            <div className="absolute top-10 left-10 w-20 h-20 opacity-10 rounded-full animate-pulse">
+              <Image
+                src="/Vectorcoconut_01.svg"
+                alt="how-it-works"
+                width={100}
+                height={100}
+                className="w-full h-auto"
+              />
+            </div>
             <div
-              className="absolute bottom-10 right-10 w-32 h-32 bg-[#e3b653] opacity-5 rounded-full animate-pulse"
+              className="absolute bottom-10 right-10 w-32 h-32  opacity-5 rounded-full animate-pulse"
               style={{animationDelay: "1s"}}
-            ></div>
+            >
+              <Image
+                src="/Vectorconcha_icon.svg"
+                alt="how-it-works"
+                width={100}
+                height={100}
+                className="w-full h-auto"
+              />
+            </div>
             <div
-              className="absolute top-1/2 left-1/4 w-16 h-16 bg-white opacity-5 rounded-full animate-pulse"
+              className="absolute top-1/2 left-1/4 w-16 h-16 opacity-5 rounded-full animate-pulse"
               style={{animationDelay: "2s"}}
-            ></div>
+            >
+              <Image
+                src="/Vetorwave-icon.svg"
+                alt="how-it-works"
+                width={100}
+                height={100}
+                className="w-full h-auto"
+              />
+            </div>
           </div>
 
           <div className="relative z-10">
