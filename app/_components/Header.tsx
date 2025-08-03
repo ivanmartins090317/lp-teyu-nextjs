@@ -9,7 +9,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white/95 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 border-b border-neutral-100">
+    <header className="bg-[#e5dfda] backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 border-b border-neutral-100">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -29,7 +29,7 @@ const Header = () => {
               />
             </div>
             <div>
-              <h1 className="font-playfair font-bold text-xl lg:text-2xl text-[#5e4e3d] hidden md:block">
+              <h1 className="font-playfair font-bold text-xl lg:text-2xl text-[#6a5c27] hidden md:block">
                 Teyu
               </h1>
               <span className="text-xs lg:text-sm text-neutral-600 hidden sm:block">
@@ -41,38 +41,38 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8 xl:space-x-10">
             <a
+              href="#sobre-nos"
+              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
+            >
+              Sobre nós
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a
               href="#servicos"
-              className=" text-[#5f5f5e] hover:text-[#5e4e3d] transition-colors font-source font-medium text-sm xl:text-base relative group"
+              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
               Serviços
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#5e4e3d] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a
               href="#como-funciona"
-              className=" text-[#5f5f5e] hover:text-[#5e4e3d] transition-colors font-source font-medium text-sm xl:text-base relative group"
+              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
               Como Funciona
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#5e4e3d] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a
               href="#depoimentos"
-              className=" text-[#5f5f5e] hover:text-[#5e4e3d] transition-colors font-source font-medium text-sm xl:text-base relative group"
+              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
               Depoimentos
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#5e4e3d] transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a
-              href="#"
-              className=" text-[#5f5f5e] hover:text-[#5e4e3d] transition-colors font-source font-medium text-sm xl:text-base relative group"
-            >
-              Sobre nós
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#5e4e3d] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button className="bg-[#e3b653] hover:bg-[#71a2c1] text-[#ffffff] font-source font-semibold px-6 lg:px-8 py-2 lg:py-3 rounded-xl transition-all hover:scale-105 shadow-md hover:shadow-lg text-sm lg:text-base">
+          <div className="hidden lg:block">
+            <Button className="bg-[#e3b653] hover:bg-[#e3b653]/20 text-[#5e4e3d] font-source font-semibold px-6 lg:px-8 py-2 lg:py-3 rounded-xl transition-all hover:scale-105 shadow-md hover:shadow-lg text-sm lg:text-base">
               Começar Agora
             </Button>
           </div>
