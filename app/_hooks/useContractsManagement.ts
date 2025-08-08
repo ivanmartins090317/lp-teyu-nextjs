@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useCallback} from "react";
 import {supabase} from "../_integrations/supabase/client";
 import {useToast} from "../_hooks/use-toast";
 
@@ -35,6 +35,7 @@ interface User {
   id: string;
   nome: string;
   email: string;
+  numero_contrato_gerado?: string | null;
 }
 
 export const useContractsManagement = () => {
@@ -43,7 +44,7 @@ export const useContractsManagement = () => {
   const [isLoading, setIsLoading] = useState(true);
   const {toast} = useToast();
 
-  const fetchContracts = async () => {
+  const fetchContracts = useCallback(async () => {
     console.log("Iniciando busca de contratos...");
     try {
       setIsLoading(true);
@@ -103,14 +104,14 @@ export const useContractsManagement = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [toast]);
 
-  const fetchUsers = async () => {
+  const fetchUsers = useCallback(async () => {
     console.log("Iniciando busca de usuários...");
     try {
       const {data, error} = await supabase
         .from("usuarios")
-        .select("id, nome, email")
+        .select("id, nome, email, numero_contrato_gerado")
         .order("nome");
 
       console.log("Resposta da busca de usuários:", {data, error});
@@ -129,51 +130,51 @@ export const useContractsManagement = () => {
     } catch (error) {
       console.error("Erro inesperado ao buscar usuários:", error);
     }
-  };
+  }, [toast]);
 
-  const saveContract = async (
-    contractData: ContractInput,
-    editingContract: Contract | null
-  ) => {
-    console.log("Dados do contrato para salvar:", contractData);
+  const saveContract = useCallback(
+    async (contractData: ContractInput, editingContract: Contract | null) => {
+      console.log("Dados do contrato para salvar:", contractData);
 
-    let error;
+      let error;
 
-    if (editingContract) {
-      console.log("Atualizando contrato existente...");
-      const {error: updateError} = await supabase
-        .from("contratos")
-        .update(contractData)
-        .eq("id", editingContract.id);
-      error = updateError;
-    } else {
-      console.log("Criando novo contrato...");
-      const {error: insertError} = await supabase
-        .from("contratos")
-        .insert([contractData]);
-      error = insertError;
-    }
+      if (editingContract) {
+        console.log("Atualizando contrato existente...");
+        const {error: updateError} = await supabase
+          .from("contratos")
+          .update(contractData)
+          .eq("id", editingContract.id);
+        error = updateError;
+      } else {
+        console.log("Criando novo contrato...");
+        const {error: insertError} = await supabase
+          .from("contratos")
+          .insert([contractData]);
+        error = insertError;
+      }
 
-    if (error) {
-      console.error("Erro ao salvar contrato:", error);
+      if (error) {
+        console.error("Erro ao salvar contrato:", error);
+        toast({
+          title: "Erro ao salvar contrato",
+          description: `Erro: ${error.message}`,
+          variant: "destructive"
+        });
+        return false;
+      }
+
       toast({
-        title: "Erro ao salvar contrato",
-        description: `Erro: ${error.message}`,
-        variant: "destructive"
+        title: editingContract ? "Contrato atualizado!" : "Contrato criado!",
+        description: editingContract
+          ? "O contrato foi atualizado com sucesso."
+          : "O contrato foi criado com sucesso."
       });
-      return false;
-    }
 
-    toast({
-      title: editingContract ? "Contrato atualizado!" : "Contrato criado!",
-      description: editingContract
-        ? "O contrato foi atualizado com sucesso."
-        : "O contrato foi criado com sucesso."
-    });
-
-    fetchContracts();
-    return true;
-  };
+      fetchContracts();
+      return true;
+    },
+    [toast, fetchContracts]
+  );
 
   useEffect(() => {
     console.log("useContractsManagement: Hook carregado, iniciando busca de dados...");
