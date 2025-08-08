@@ -1,11 +1,12 @@
 "use client";
 
 import React, {useState} from "react";
-import {ArrowRight, CheckCircle} from "lucide-react";
 import {Button} from "../_components/ui/button";
 import SignupModal from "./SignupModal";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import {motion} from "framer-motion";
+import {ArrowRight, CheckCircle} from "lucide-react";
 
 // Importação dinâmica do framer-motion para evitar erro de client boundary
 const MotionDiv = dynamic(() => import("framer-motion").then((mod) => mod.motion.div), {
@@ -25,15 +26,15 @@ const HeroSection = () => {
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
-  const scrollToServices = () => {
-    const servicesSection = document.getElementById("servicos");
-    if (servicesSection) {
-      servicesSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  };
+  // const scrollToServices = () => {
+  //   const servicesSection = document.getElementById("servicos");
+  //   if (servicesSection) {
+  //     servicesSection.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start"
+  //     });
+  //   }
+  // };
 
   // Benefits data
   const benefits = [
@@ -44,6 +45,7 @@ const HeroSection = () => {
 
   // Create duplicated benefits for infinite scroll
   const duplicatedBenefits = [...benefits, ...benefits];
+  const quadriplicatedBenefits = [...benefits, ...benefits, ...benefits, ...benefits];
 
   // Animation for counting numbers
   // useEffect(() => {
@@ -79,9 +81,11 @@ const HeroSection = () => {
 
   //   return () => clearInterval(timer);
   // }, []);
+  const MotionImage = motion(Image);
+  const MotionButton = motion(Button);
 
   return (
-    <section className="bg-[#6a5c27] text-[#dcd7d1] py-20 md:pt-30 md:pb-12 relative overflow-hidden">
+    <section className="bg-[#6a5c27] text-[#dcd7d1] h-auto md:min-h-screen pt-16 md:pt-35 md:pb-0 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto text-center">
           {/* Content */}
@@ -93,19 +97,35 @@ const HeroSection = () => {
                   Menos preocupação com a prancha.
                 </span>
               </h1> */}
-              <div className="w-full flex justify-center p-0 m-0 mt-10">
-                <Image
-                  src="/logo_hero_teyu.svg"
+              <div className="w-full flex justify-center p-0 m-0 mt-20 md:mt-0">
+                <MotionImage
+                  src="/logo_hero_teyu_02.svg"
                   width={400}
                   height={400}
                   alt="Logo hero Teyu"
-                  className="w-[89%] h-auto md:w-[39%]"
+                  initial={{opacity: 0, scale: 0.8}}
+                  animate={{opacity: 1, scale: 1}}
+                  transition={{duration: 0.6}}
+                  className="w-[89%] h-auto md:w-[50%] ml-[-2%]"
                 />
               </div>
-              <p className="font-source text-sm md:text-xl text-[#e5dfda] leading-relaxed max-w-3xl mx-auto">
+              <motion.p
+                initial={{opacity: 0, y: 10}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 0.6, delay: 0.8}}
+                className="font-light text-sm md:text-xl text-[#e5dfda] mb-0 leading-relaxed max-w-3xl mx-auto"
+              >
                 Guarde, repare e viva a experiência completa do surfe <br /> em um único
                 lugar, fácil, prático e seguro.
-              </p>
+              </motion.p>
+              {/* <motion.span
+                initial={{opacity: 0, y: 10}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 0.6, delay: 0.4}}
+                className="text-sm font-thin"
+              >
+                Inspirado pela natureza, feito para quem vive o mar
+              </motion.span> */}
             </div>
 
             {/* Benefits */}
@@ -123,23 +143,30 @@ const HeroSection = () => {
             </div> */}
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                onClick={handleOpenModal}
-                className="bg-[#e3b653] hover:bg-[#e3b653]/20 text-[#e5dfda] font-source font-bold px-8 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-xl"
-              >
-                Experiência completa
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button
+            {
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:mb-20 ">
+                <MotionButton
+                  initial={{opacity: 0, scale: 0.9}}
+                  animate={{opacity: 1, scale: 1}}
+                  transition={{duration: 0.4, delay: 0.5}}
+                  onClick={handleOpenModal}
+                  className="w-[73%] mx-auto md:w-auto bg-[#e3b653] hover:bg-[#e3b653]/20 hover:text-[#e5dfda] text-[#5e4e3d] font-source font-semibold px-8 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-xl"
+                >
+                  Experiência completa
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </MotionButton>
+                {/* <MotionButton
+                initial={{opacity: 0, scale: 0.9}}
+                animate={{opacity: 1, scale: 1}}
+                transition={{duration: 0.4, delay: 0.7}}
                 onClick={scrollToServices}
                 variant="outline"
-                className=" text-[#e5dfda] hover:bg-[#e3b653]/20 hover:text-[#e5dfda] font-source font-semibold px-8 py-4 rounded-lg text-lg transition-all"
+                className=" text-[#e5dfda]/20 hover:bg-[#e3b653]/20 hover:text-[#e5dfda] font-source font-semibold px-8 py-4 rounded-lg text-lg transition-all"
               >
                 Nossos Serviços
-              </Button>
-            </div>
-
+              </MotionButton> */}
+              </div>
+            }
             {/* Social Proof with Animated Numbers */}
             {/* <div className="flex flex-wrap justify-center gap-8 pt-8 border-t border-[#5e4e3d]/5">
               <div className="text-center">
@@ -172,25 +199,11 @@ const HeroSection = () => {
               </div>
             </div> */}
 
-            {/* Benefits */}
-            {/* Desktop Version */}
-            <div className="hidden md:flex flex-wrap justify-center gap-6">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="flex items-center space-x-2 bg-[#e5dfda]/10 px-4 py-2 rounded-full"
-                >
-                  <CheckCircle className="w-5 h-5 text-[#e5dfda]" />
-                  <span className="font-source text-sm text-[#e5dfda]">{benefit}</span>
-                </div>
-              ))}
-            </div>
-
             {/* Mobile Version - Infinite Scroll */}
-            <div className="md:hidden relative overflow-hidden">
+            <div className="md:hidden relative overflow-hidden mb-10 ">
               {/* Blur overlays */}
-              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#6a5c27] to-transparent z-10 pointer-events-none"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#6a5c27] to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-r from-[#6a5c27] to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-l from-[#6a5c27] to-transparent z-10 pointer-events-none"></div>
 
               {/* Scrolling container */}
               <div className="overflow-hidden">
@@ -226,6 +239,43 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Benefits */}
+      {/* Desktop Version */}
+      <div className="hidden md:flex relative overflow-hidden bg-[#5e4e3d]/20 p-16 ">
+        {/* Blur overlays */}
+        <div className="absolute left-0 top-0 bottom-0 w-38 bg-gradient-to-r from-[#6a5c27] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-38 bg-gradient-to-l from-[#6a5c27] to-transparent z-10 pointer-events-none"></div>
+
+        {/* Scrolling container */}
+        <div className="overflow-hidden">
+          <MotionDiv
+            className="flex gap-4 whitespace-nowrap"
+            animate={{
+              x: [0, -100 * benefits.length + "%"]
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 90, // Velocidade suave - 20 segundos para completar um ciclo
+                ease: "linear"
+              }
+            }}
+          >
+            {quadriplicatedBenefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="flex items-center space-x-2 bg-[#e5dfda]/10 px-4 py-2 rounded-full flex-shrink-0"
+              >
+                <CheckCircle className="w-5 h-5 text-[#e5dfda]" />
+                <span className="font-source text-sm text-[#e5dfda] whitespace-nowrap">
+                  {benefit}
+                </span>
+              </div>
+            ))}
+          </MotionDiv>
+        </div>
+      </div>
       <SignupModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </section>
   );

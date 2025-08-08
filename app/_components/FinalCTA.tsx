@@ -75,7 +75,7 @@ const FinalCTA = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handleOpenModal}
-                className="bg-[#e3b653] hover:bg-[#71a2c1] text-white font-source font-bold px-12 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-2xl hover:shadow-gold/20"
+                className="bg-[#e3b653] hover:bg-[#5e4e3d] text-[#5e4e3d] hover:text-[#e5dfda] font-source font-bold px-12 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-2xl hover:shadow-gold/20"
               >
                 Criar Minha Conta Grátis
               </button>

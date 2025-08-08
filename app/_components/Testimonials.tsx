@@ -180,7 +180,7 @@ const Testimonials = () => {
             variant="ghost"
             size="icon"
             onClick={scrollPrev}
-            className="h-12 w-12 rounded-full border-2 border-[#5f5f5e]/10 hover:border-[#5f5f5e] hover:bg-[#5f5f5e] hover:text-white transition-all duration-300 shadow-md hover:shadow-lg group"
+            className="h-12 w-12 rounded-full border-2 border-[#5f5f5e]/10 hover:border-[#5f5f5e] hover:bg-[#5f5f5e]/20 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg group"
           >
             <ChevronLeft className="h-5 w-5 transition-transform group-hover:-translate-x-0.5 text-[#5f5f5e] hover:bg-white" />
           </Button>
@@ -205,7 +205,7 @@ const Testimonials = () => {
             variant="ghost"
             size="icon"
             onClick={scrollNext}
-            className="h-12 w-12 rounded-full border-2 border-[#5f5f5e]/10 hover:border-[#5f5f5e] hover:bg-[#5f5f5e] hover:text-white transition-all duration-300 shadow-md hover:shadow-lg group"
+            className="h-12 w-12 rounded-full border-2 border-[#5f5f5e]/10 hover:border-[#5f5f5e] hover:bg-[#5f5f5e]/20 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg group"
           >
             <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 text-[#5f5f5e] hover:text-white" />
           </Button>
@@ -257,7 +257,7 @@ const Testimonials = () => {
             <p className="font-source text-[#5f5f5e] mb-6">
               Faça parte da nossa comunidade e transforme sua rotina com serviços premium.
             </p>
-            <button className="bg-[#e3b653] hover:bg-[#71A2C1] text-white font-source font-bold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-xl">
+            <button className="bg-[#e3b653] hover:bg-[#5e4e3d] text-[#5e4e3d] hover:text-[#e5dfda] font-source font-bold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-xl">
               Começar Agora
             </button>
           </div>

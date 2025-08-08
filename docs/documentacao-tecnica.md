@@ -4,6 +4,117 @@
 
 Este projeto é uma plataforma web para gestão e geração de contratos digitais, com cadastro de usuários, autenticação, gerenciamento de contratos e geração de PDFs personalizados. O objetivo é simplificar o processo de contratação de serviços, centralizando informações e automatizando a documentação.
 
+## Identidade Visual da Marca
+
+### Paleta de Cores
+
+**Cores Primárias:**
+
+- **#6a5c27** - Verde oliva escuro (cor principal da marca)
+- **#e3b653** - Dourado/amarelo (cor de destaque)
+- **#5e4e3d** - Marrom terroso (cor de fundo)
+
+**Cores Secundárias:**
+
+- **#71A2C1** - Azul claro (tons de água/surf)
+- **#ca8454** - Laranja terroso
+- **#873d4e** - Vinho/roxo escuro
+- **#616160** - Cinza escuro
+- **#e5dfda** - Bege claro/creme
+
+**Estudo Cromático Completo:**
+
+```
+Paleta Principal:
+• #6a5c27 - Verde oliva (marca principal)
+• #e3b653 - Dourado (destaque)
+• #5e4e3d - Marrom terroso (fundo)
+• #e5dfda - Bege claro (texto/contraste)
+
+Paleta Complementar:
+• #71A2C1 - Azul surf
+• #ca8454 - Laranja natural
+• #873d4e - Vinho/roxo
+• #616160 - Cinza neutro
+```
+
+### Elementos Visuais
+
+**Logo Principal:**
+
+- Tipografia: "TEYU" em letras maiúsculas bold
+- Tagline: "Guardaria e Prancharia" / "Soul Surfers"
+- Elemento gráfico: Silhueta de prancha de surf estilizada
+- Aplicações: Disponível em versões para diferentes fundos (claro, escuro, colorido)
+
+**Ícones e Símbolos:**
+
+- Teyu (lagarto) estilizado com textura de escamas
+- Elementos surf: pranchas, ondas, coqueiros
+- Símbolos naturais: sol, folhas, conchas
+- Texturas orgânicas: escamas, padrões naturais
+
+**Aplicações da Marca:**
+
+- Logotipo circular com letra "T" texturizada
+- Variações para diferentes contextos (fundos diversos)
+- Elementos decorativos inspirados na natureza
+- Padrões geométricos com referências ao surf
+
+**Elementos Específicos das Imagens:**
+
+- **Texturas**: Padrões de escamas em preto e branco para backgrounds
+- **Slogan**: "FIM DE SEMANA de muito sol e ondas VEM PRA TEYU"
+- **Localização**: "PICO DO TEYU - CANAL 1 SANTOS"
+- **Serviços**: "Segurança e flexibilidade para guardar a sua prancha"
+- **Horário**: "ABERTO TODOS OS DIAS"
+- **Seção Educativa**: "DA ONDE VEM O NOME TEYU?" com ilustração do animal
+- **Elementos Decorativos**: Ondas, pranchas, coqueiros, sol, símbolo da paz, conchas
+- **Variações do Logo**: Adaptações para diferentes fundos (verde, azul, cinza, dourado)
+
+### Conceito Visual
+
+A identidade visual combina elementos naturais (teyu/lagarto) com a cultura surf, utilizando cores terrosas e orgânicas que remetem ao meio ambiente natural e à praia. O design equilibra modernidade com elementos orgânicos, criando uma identidade única que conecta natureza e lifestyle surf.
+
+### Diretrizes de Aplicação
+
+**Hierarquia Cromática:**
+
+1. **Cor Principal**: #6a5c27 (verde oliva) - Usada em títulos principais e elementos de destaque
+2. **Cor de Destaque**: #e3b653 (dourado) - Para CTAs, links e elementos interativos
+3. **Cor de Fundo**: #5e4e3d (marrom terroso) - Para seções e backgrounds
+4. **Cores de Apoio**: Azul, laranja, vinho - Para variações e contextos específicos
+
+**Contextos de Uso:**
+
+- **Fundos Claros**: Usar cores escuras (#6a5c27, #5e4e3d) para texto e elementos
+- **Fundos Escuros**: Usar cores claras (#e5dfda, #e3b653) para contraste
+- **Elementos Interativos**: Priorizar #e3b653 (dourado) para botões e links
+- **Texto Secundário**: Usar #616160 (cinza escuro) para informações auxiliares
+
+**Inspiração Temática:**
+
+- **Natureza**: Cores terrosas que remetem ao habitat natural do teyu
+- **Surf**: Tons de azul e elementos aquáticos
+- **Orgânico**: Texturas e padrões inspirados em escamas e elementos naturais
+- **Lifestyle**: Combinação harmoniosa entre natureza e cultura surf
+
+### Referências Visuais
+
+**Arquivo de Referência**: As imagens fornecidas contêm:
+
+1. **Estudo Cromático**: Círculos com códigos de cores e suas aplicações
+2. **Variações de Logo**: Aplicações do logo TEYU em diferentes contextos
+3. **Elementos Gráficos**: Ícones, símbolos e padrões da marca
+4. **Aplicações Práticas**: Exemplos de uso em materiais promocionais
+5. **Identidade Expandida**: Elementos complementares e variações temáticas
+
+**Uso na Aplicação Web**:
+
+- As cores definidas no estudo cromático são aplicadas nos componentes React
+- O componente `AboutTeyu` utiliza as cores principais (#5e4e3d, #e3b653, #e5dfda)
+- A identidade visual é mantida consistente em toda a aplicação
+
 ## Tecnologias Utilizadas
 
 - **Next.js**: Framework React para aplicações web com SSR/SSG.

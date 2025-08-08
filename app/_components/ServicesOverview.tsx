@@ -90,7 +90,7 @@ const ServicesOverview = () => {
                 <div
                   className={`w-16 h-16 mx-auto rounded-full ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4`}
                 >
-                  <category.icon className="w-8 h-8 text-white" />
+                  <category.icon className="w-8 h-8 text-[#6a5c27]" />
                 </div>
                 <CardTitle className="font-playfair text-xl text-[#5e4e3d]">
                   {category.title}

@@ -107,7 +107,7 @@ const HowItWorks = () => {
                       className={`w-32 h-32 mx-auto rounded-full bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-2xl ${step.shadowColor} group-hover:scale-110 transition-transform duration-500 relative overflow-hidden`}
                     >
                       <div className="absolute inset-0 bg-white opacity-20 rounded-full"></div>
-                      <step.icon className="w-12 h-12 text-white relative z-10" />
+                      <step.icon className="w-12 h-12 text-[#6a5c27] relative z-10" />
                     </div>
 
                     {/* Step Number Badge */}
