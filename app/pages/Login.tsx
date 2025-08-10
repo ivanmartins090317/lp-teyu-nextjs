@@ -1,27 +1,34 @@
 "use client";
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {useRouter} from "next/navigation";
 import {useAuth} from "../_contexts/AuthContext";
-import {Button} from "../_components/ui/button";
-import {Input} from "../_components/ui/input";
+import {Button} from "../_components/shared/ui/button";
+import {Input} from "../_components/shared/ui/input";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle
-} from "../_components/ui/card";
-import {Label} from "../_components/ui/label";
+} from "../_components/shared/ui/card";
+import {Label} from "../_components/shared/ui/label";
 import {useToast} from "../_hooks/use-toast";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const {login} = useAuth();
+  const {login, isAuthenticated} = useAuth();
   const router = useRouter();
   const {toast} = useToast();
+
+  // Redirecionar se já estiver autenticado
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push("/contracts");
+    }
+  }, [isAuthenticated, router]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,7 +41,7 @@ const Login = () => {
           title: "Login realizado com sucesso",
           description: "Redirecionando para a página de contratos..."
         });
-        router.push("/contracts");
+        // O useEffect vai cuidar do redirecionamento quando isAuthenticated mudar
       } else {
         toast({
           title: "Erro no login",
@@ -47,7 +54,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 text-black px-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl text-center">Login</CardTitle>

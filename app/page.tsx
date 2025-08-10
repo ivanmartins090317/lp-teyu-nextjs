@@ -1,14 +1,14 @@
-import Header from "./_components/Header";
-import HeroSection from "./_components/HeroSection";
-import ServicesOverview from "./_components/ServicesOverview";
-import HowItWorks from "./_components/HowItWorks";
-import AboutTeyu from "./_components/AboutTeyu";
-import Testimonials from "./_components/Testimonials";
-import VideoSection from "./_components/VideoSection";
-import FinalCTA from "./_components/FinalCTA";
-import Footer from "./_components/Footer";
-import FloatingWhatsApp from "./_components/FloatingWhatsApp";
-import AboutUs from "./_components/AboutUs";
+import Header from "./_components/shared/Header";
+import HeroSection from "./_components/landing/HeroSection";
+import ServicesOverview from "./_components/landing/ServicesOverview";
+import HowItWorks from "./_components/landing/HowItWorks";
+import AboutTeyu from "./_components/landing/AboutTeyu";
+import Testimonials from "./_components/landing/Testimonials";
+import VideoSection from "./_components/landing/VideoSection";
+import FinalCTA from "./_components/landing/FinalCTA";
+import Footer from "./_components/shared/Footer";
+import FloatingWhatsApp from "./_components/shared/FloatingWhatsApp";
+import AboutUs from "./_components/landing/AboutUs";
 
 export default function Home() {
   return (

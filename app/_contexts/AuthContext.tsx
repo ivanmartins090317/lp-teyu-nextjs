@@ -4,6 +4,7 @@ import React, {createContext, useContext, useState, useEffect} from "react";
 
 interface AuthContextType {
   isAuthenticated: boolean;
+  isLoading: boolean;
   login: (username: string, password: string) => boolean;
   logout: () => void;
 }
@@ -20,6 +21,7 @@ export const useAuth = () => {
 
 export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // Credenciais padrão (deve ser mudado mais tarde)
   const DEFAULT_USERNAME = "teyu";
@@ -33,6 +35,7 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
       if (authStatus === "true") {
         setIsAuthenticated(true);
       }
+      setIsLoading(false);
     }
   }, []);
 
@@ -41,6 +44,8 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
       setIsAuthenticated(true);
       if (typeof window !== "undefined") {
         localStorage.setItem("isAuthenticated", "true");
+        // Também definir um cookie para maior segurança
+        document.cookie = "isAuthenticated=true; path=/; max-age=86400"; // 24 horas
       }
       return true;
     }
@@ -51,11 +56,13 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({children}) 
     setIsAuthenticated(false);
     if (typeof window !== "undefined") {
       localStorage.removeItem("isAuthenticated");
+      // Remover cookie também
+      document.cookie = "isAuthenticated=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
   };
 
   return (
-    <AuthContext.Provider value={{isAuthenticated, login, logout}}>
+    <AuthContext.Provider value={{isAuthenticated, isLoading, login, logout}}>
       {children}
     </AuthContext.Provider>
   );
