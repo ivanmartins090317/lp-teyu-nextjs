@@ -9,7 +9,7 @@ import FinalCTA from "./_components/landing/FinalCTA";
 import Footer from "./_components/shared/Footer";
 import FloatingWhatsApp from "./_components/shared/FloatingWhatsApp";
 import AboutUs from "./_components/landing/AboutUs";
-import BenefitsScrolling from "./_components/landing/benefitsScrolling";
+import BenefitsScrolling from "./_components/landing/BenefitsScrolling";
 
 export default function Home() {
   return (
