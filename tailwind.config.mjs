@@ -1,4 +1,4 @@
-import {defineConfig} from "@tailwindcss/postcss";
+import { defineConfig } from '@tailwindcss/postcss'
 
 export default defineConfig({
   content: [
@@ -21,4 +21,4 @@ export default defineConfig({
       }
     }
   }
-});
+})
