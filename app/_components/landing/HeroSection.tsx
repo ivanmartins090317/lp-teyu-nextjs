@@ -23,12 +23,12 @@ const HeroSection = () => {
           {/* Content */}
           <div className="space-y-10 animate-fade-in">
             <div className="space-y-6">
-              {/* <h1 className="font-open-sans text-[#5e4e3d] font-bold text-3xl md:text-4xl lg:text-5xl leading-tight">
+              <h1 className="font-open-sans text-[#5e4e3d] font-bold text-3xl md:text-4xl lg:text-5xl leading-tight">
                 Mais tempo no mar,
                 <span className="text-[#5e4e3d] block">
                   Menos preocupação com a prancha.
                 </span>
-              </h1> */}
+              </h1>
               <div className="w-full flex justify-center p-0 m-0 mt-20 md:mt-8 2xl:mt-18">
                 <MotionImage
                   src="/logo_hero_teyu_02.svg"
