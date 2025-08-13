@@ -9,6 +9,7 @@ import FinalCTA from "./_components/landing/FinalCTA";
 import Footer from "./_components/shared/Footer";
 import FloatingWhatsApp from "./_components/shared/FloatingWhatsApp";
 import AboutUs from "./_components/landing/AboutUs";
+import BenefitsScrolling from "./_components/landing/benefitsScrolling";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <div className="flex flex-col">
         <HeroSection />
+        <BenefitsScrolling />
         <AboutUs />
         <AboutTeyu />
         <ServicesOverview />
