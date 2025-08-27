@@ -15,7 +15,7 @@ const ServicesOverview = () => {
         "Organização",
         "Limpeza de carpetes"
       ],
-      color: "bg-[#e3b653]",
+      color: "bg-[#e3b653]/20",
       popular: true
     },
     {
@@ -23,7 +23,7 @@ const ServicesOverview = () => {
       title: "Manutenção & Reparos",
       description: "Eletricista, encanador, pintor e serviços gerais",
       services: ["Eletricista", "Encanador", "Pintor", "Marcenaria"],
-      color: "bg-[#e3b653]",
+      color: "bg-[#e3b653]/20",
       popular: false
     },
     {
@@ -31,7 +31,7 @@ const ServicesOverview = () => {
       title: "Beleza & Bem-estar",
       description: "Cabeleireiro, manicure, massagem no conforto da sua casa",
       services: ["Cabelo", "Manicure", "Massagem", "Estética"],
-      color: "bg-[#e3b653]",
+      color: "bg-[#e3b653]/20",
       popular: false
     },
     {
@@ -39,7 +39,7 @@ const ServicesOverview = () => {
       title: "Automotivo",
       description: "Lavagem, enceramento e detalhamento do seu veículo",
       services: ["Lavagem", "Enceramento", "Detalhamento", "Limpeza interna"],
-      color: "bg-[#e3b653]",
+      color: "bg-[#e3b653]/20",
       popular: false
     },
     {
@@ -47,7 +47,7 @@ const ServicesOverview = () => {
       title: "Cuidados Pessoais",
       description: "Babá, cuidador de idosos, pet sitting",
       services: ["Babá", "Cuidador", "Pet sitting", "Acompanhante"],
-      color: "bg-[#e3b653]",
+      color: "bg-[#e3b653]/20",
       popular: false
     },
     {
@@ -55,7 +55,7 @@ const ServicesOverview = () => {
       title: "Gastronomia",
       description: "Chef particular, eventos, refeições saudáveis",
       services: ["Chef particular", "Eventos", "Meal prep", "Confeitaria"],
-      color: "bg-[#e3b653]",
+      color: "bg-[#e3b653]/20",
       popular: false
     }
   ];
@@ -65,7 +65,7 @@ const ServicesOverview = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="font-playfair font-bold text-3xl md:text-4xl lg:text-5xl text-[#5e4e3d] mb-6">
+            <h2 className="font-playfair font-bold text-3xl md:text-4xl lg:text-5xl text-[#6a5c27] mb-6">
               Nossos Serviços
             </h2>
             <p className="font-source text-lg md:text-xl text-[#5f5f5e] max-w-3xl mx-auto leading-relaxed">
@@ -82,7 +82,7 @@ const ServicesOverview = () => {
                 style={{animationDelay: `${index * 0.1}s`}}
               >
                 {category.popular && (
-                  <Badge className="absolute -top-3 left-6 bg-[#71A2C1] text-white hover:bg-[#5e4e3d]/80 font-source font-semibold">
+                  <Badge className="absolute -top-3 left-6 bg-[#71A2C1] text-white hover:bg-[#6a5c27]/80 font-source font-semibold">
                     Mais Popular
                   </Badge>
                 )}
@@ -93,7 +93,7 @@ const ServicesOverview = () => {
                   >
                     <category.icon className="w-8 h-8 text-[#6a5c27]" />
                   </div>
-                  <CardTitle className="font-playfair text-xl text-[#5e4e3d]">
+                  <CardTitle className="font-playfair text-xl text-[#6a5c27]">
                     {category.title}
                   </CardTitle>
                 </CardHeader>
@@ -104,7 +104,7 @@ const ServicesOverview = () => {
                   </p>
 
                   <div className="space-y-2">
-                    <div className="font-source font-semibold text-sm text-[#5e4e3d] mb-3">
+                    <div className="font-source font-semibold text-sm text-[#6a5c27] mb-3">
                       Serviços inclusos:
                     </div>
                     <div className="flex flex-wrap gap-2">

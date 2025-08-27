@@ -79,7 +79,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-[#5e4e3d] rounded-lg hover:bg-neutral-100 transition-colors"
+            className="lg:hidden p-2 text-[#6a5c27] rounded-lg hover:bg-neutral-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -92,28 +92,35 @@ const Header = () => {
           <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-neutral-100 shadow-lg">
             <nav className="flex flex-col space-y-1 px-4 py-6">
               <a
+                href="#sobre-nos"
+                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Sobre nós
+              </a>
+              <a
                 href="#servicos"
-                className="text-[#5e4e3d] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
+                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Serviços
               </a>
               <a
                 href="#como-funciona"
-                className="text-[#5e4e3d] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
+                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Como Funciona
               </a>
               <a
                 href="#depoimentos"
-                className="text-[#5e4e3d] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
+                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Depoimentos
               </a>
               <div className="pt-4 border-t border-neutral-200 mt-4">
-                <Button className="w-full bg-[#5e4e3d] hover:bg-[#5e4e3d]/80 text-white font-source font-semibold px-6 py-3 rounded-xl transition-all shadow-md">
+                <Button className="w-full bg-[#6a5c27] hover:bg-[#6a5c27]/80 text-white font-source font-semibold px-6 py-3 rounded-xl transition-all shadow-md">
                   Começar Agora
                 </Button>
               </div>

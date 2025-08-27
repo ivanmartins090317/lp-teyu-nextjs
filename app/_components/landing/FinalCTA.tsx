@@ -27,7 +27,7 @@ const FinalCTA = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#e5dfda] via-[#e5dfda]/95 to-[#e5dfda]/90 text-[#5e4e3d] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-[#e5dfda] via-[#e5dfda]/95 to-[#e5dfda]/90 text-[#6a5c27] relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 border border-white rounded-full"></div>
@@ -75,13 +75,13 @@ const FinalCTA = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handleOpenModal}
-                className="bg-[#e3b653] hover:bg-[#5e4e3d] text-[#5e4e3d] hover:text-[#e5dfda] font-source font-bold px-12 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-2xl hover:shadow-gold/20"
+                className="bg-[#e3b653] hover:bg-[#6a5c27]/70 text-[#6a5c27  ] hover:text-[#e5dfda] font-source font-bold px-12 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-2xl hover:shadow-gold/20"
               >
                 Criar Minha Conta Grátis
               </button>
               <button
                 onClick={handleWhatsAppClick}
-                className="border-1 border-[#5e4e3d] text-[#5e4e3d] hover:bg-[#e3b653]/20 hover:text-[#5e4e3d] font-source font-semibold px-12 py-4 rounded-lg text-lg transition-all"
+                className="border-1 border-[#6a5c27] text-[#6a5c27] hover:bg-[#6a5c27]/20 hover:text-[#6a5c27] font-source font-semibold px-12 py-4 rounded-lg text-lg transition-all"
               >
                 Falar com Especialista
               </button>

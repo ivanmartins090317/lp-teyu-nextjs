@@ -5,7 +5,12 @@ import {Star, Quote, ChevronLeft, ChevronRight} from "lucide-react";
 import {Card, CardContent} from "../shared/ui/card";
 import {Avatar, AvatarFallback} from "../shared/ui/avatar";
 import {Button} from "../shared/ui/button";
-import {Carousel, CarouselContent, CarouselItem, CarouselApi} from "../shared/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselApi
+} from "../shared/ui/carousel";
 
 const Testimonials = () => {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -94,7 +99,7 @@ const Testimonials = () => {
     <section id="depoimentos" className="py-16 md:py-24 bg-[#e5dfda]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-playfair font-bold text-3xl md:text-4xl lg:text-5xl text-[#5e4e3d] mb-6">
+          <h2 className="font-playfair font-bold text-3xl md:text-4xl lg:text-5xl text-[#6a5c27] mb-6">
             O que nossos clientes dizem
           </h2>
           <p className="font-source text-lg md:text-xl text-[#5f5f5e] max-w-3xl mx-auto leading-relaxed">
@@ -246,13 +251,13 @@ const Testimonials = () => {
         {/* CTA */}
         <div className="text-center mt-16 animate-scale-in">
           <div className="bg-white rounded-xl p-8 md:p-12 shadow-xl max-w-3xl mx-auto">
-            <h3 className="font-playfair font-bold text-2xl md:text-3xl text-[#5e4e3d] mb-4">
+            <h3 className="font-playfair font-bold text-2xl md:text-3xl text-[#6a5c27] mb-4">
               Junte-se aos nossos clientes satisfeitos
             </h3>
             <p className="font-source text-[#5f5f5e] mb-6">
               Faça parte da nossa comunidade e transforme sua rotina com serviços premium.
             </p>
-            <button className="bg-[#e3b653] hover:bg-[#5e4e3d] text-[#5e4e3d] hover:text-[#e5dfda] font-source font-bold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-xl">
+            <button className="bg-[#e3b653] hover:bg-[#6a5c27] text-[#6a5c27] hover:text-[#e5dfda] font-source font-bold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-xl">
               Começar Agora
             </button>
           </div>

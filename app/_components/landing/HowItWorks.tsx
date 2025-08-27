@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, {useRef} from "react";
 import {Smartphone, Calendar, UserCheck, Star} from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -12,6 +12,20 @@ const MotionDiv = dynamic(() => import("framer-motion").then((mod) => mod.motion
 });
 
 const HowItWorks = () => {
+  // Criar referência para a seção de vídeo
+  const videoSectionRef = useRef<HTMLElement>(null);
+
+  // Função usando useRef
+  const handleVideoClick = () => {
+    console.log("scrollIntoView");
+    if (videoSectionRef.current) {
+      videoSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  };
+
   const steps = [
     {
       icon: Smartphone,
@@ -19,7 +33,7 @@ const HowItWorks = () => {
       description:
         "Navegue pelos nossos 15+ serviços e escolha o que você precisa. Simples e intuitivo.",
       color: "",
-      gradient: "from-[#e3b653] to-[#e3b653]",
+      gradient: "from-[#e3b653] to-[#e3b653]/20",
       shadowColor: "[#e3b653]"
     },
     {
@@ -28,7 +42,7 @@ const HowItWorks = () => {
       description:
         "Selecione a data e horário que melhor se adequa à sua agenda visita via whatsapp. Flexibilidade total.",
       color: "",
-      gradient: "from-[#e3b653] to-[#e3b653]",
+      gradient: "from-[#e3b653] to-[#e3b653]/20",
       shadowColor: "[#e3b653]"
     },
     {
@@ -36,7 +50,7 @@ const HowItWorks = () => {
       title: "Confirmação",
       description: "Receba a confirmação para a visita.",
       color: "",
-      gradient: "from-[#e3b653] to-[#e3b653]",
+      gradient: "from-[#e3b653] to-[#e3b653]/20",
       shadowColor: "[#e3b653]"
     },
     {
@@ -45,7 +59,7 @@ const HowItWorks = () => {
       description:
         "Relaxe enquanto cuidamos do seu equipamento. Avalie e compartilhe sua experiência.",
       color: "",
-      gradient: "from-[#e3b653] to-[#e3b653]",
+      gradient: "from-[#e3b653] to-[#e3b653]/20",
       shadowColor: "[#e3b653]"
     }
   ];
@@ -76,7 +90,7 @@ const HowItWorks = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-20 animate-fade-in">
-          <h2 className="font-open-sans font-bold text-4xl md:text-5xl lg:text-6xl text-[#5e4e3d] mb-6">
+          <h2 className="font-open-sans font-bold text-4xl md:text-5xl lg:text-6xl text-[#6a5c27] mb-6">
             Como Funciona
           </h2>
           <p className="font-source text-xl md:text-2xl text-[#5f5f5e] max-w-4xl mx-auto leading-relaxed">
@@ -111,8 +125,8 @@ const HowItWorks = () => {
                     </div>
 
                     {/* Step Number Badge */}
-                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-white rounded-full border-4 border-[#5e4e3d] flex items-center justify-center shadow-lg">
-                      <span className="font-source font-bold text-lg text-[#5e4e3d]">
+                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-white rounded-full border-4 border-[#6a5c27] flex items-center justify-center shadow-lg">
+                      <span className="font-source font-bold text-lg text-[#6a5c27]">
                         {index + 1}
                       </span>
                     </div>
@@ -123,7 +137,7 @@ const HowItWorks = () => {
 
                   {/* Content */}
                   <div className="text-center space-y-4">
-                    <h3 className="font-open-sans font-bold text-2xl text-[#5e4e3d] group-hover:text-[#e3b653] transition-colors duration-300">
+                    <h3 className="font-open-sans font-bold text-2xl text-[#6a5c27] group-hover:text-[#e3b653]/70 transition-colors duration-300">
                       {step.title}
                     </h3>
                     <p className="font-source text-[#5f5f5e] leading-relaxed text-lg">
@@ -144,7 +158,7 @@ const HowItWorks = () => {
               key={index}
               className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-neutral-100"
             >
-              <div className="text-4xl font-open-sans font-bold text-[#e3b653] mb-3">
+              <div className="text-4xl font-open-sans font-bold text-[#6a5c27] mb-3">
                 {stat.value}
               </div>
               <div className="font-source text-[#5f5f5e] text-lg">{stat.label}</div>
@@ -192,7 +206,7 @@ const HowItWorks = () => {
         </div>
 
         {/* Enhanced Demo Section */}
-        <div className="mt-20 bg-gradient-to-br from-[#5e4e3d] via-[#5e4e3d] to-[#5e4e3d] rounded-xl p-12 md:p-16 text-white text-center animate-scale-in relative overflow-hidden">
+        <div className="mt-20 bg-gradient-to-br from-[#6a5c27] via-[#5e4e3d] to-[#6a5c27] rounded-xl p-12 md:p-16 text-white text-center animate-scale-in relative overflow-hidden">
           {/* Background Decorations */}
           <div className="absolute top-0 left-0 w-full h-full">
             <div className="absolute top-10 left-10 w-20 h-20 opacity-10 rounded-full animate-pulse">
@@ -238,7 +252,10 @@ const HowItWorks = () => {
               Assista nossa demonstração de 2 minutos e veja como é fácil agendar um
               serviço premium para sua casa.
             </p>
-            <button className="bg-[#e3b653] hover:bg-[#e3b653]-600 text-white font-source font-bold px-10 py-5 rounded-md transition-all hover:scale-105 shadow-2xl text-lg group">
+            <button
+              onClick={handleVideoClick}
+              className="bg-[#e3b653]/20 hover:bg-[#e3b653]-600 text-white font-source font-bold px-10 py-5 rounded-md transition-all hover:scale-105 shadow-2xl text-lg group"
+            >
               <span className="group-hover:scale-105 transition-transform inline-block">
                 Assistir Demonstração
               </span>
