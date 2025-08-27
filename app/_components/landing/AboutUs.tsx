@@ -8,7 +8,7 @@ export default function AboutUs() {
     <section className="py-16 md:py-24 bg-[#e5dfda] overflow-hidden">
       <div id="sobre-nos" />
       <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="flex lg:flex-row flex-col gap-12 lg:gap-16 items-center">
             {/* Conteúdo Principal */}
             <motion.div
