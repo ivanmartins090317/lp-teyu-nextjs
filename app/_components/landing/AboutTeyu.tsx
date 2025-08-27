@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AboutTeyu() {
   return (
-    <section className="pb-16 md:py-16 bg-[#5e4e3d] overflow-hidden">
+    <section className="pb-16 md:py-16 bg-[#6a5c27] overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex lg:flex-row flex-col gap-12 items-center">
