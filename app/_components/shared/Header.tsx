@@ -56,7 +56,7 @@ const Header = () => {
             </a>
             <a
               href="#como-funciona"
-              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
+              className="text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
               Como Funciona
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
@@ -71,7 +71,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden ">
             <Button className="bg-[#e3b653] hover:bg-[#e3b653]/20 text-[#5e4e3d] font-source font-semibold px-6 lg:px-8 py-2 lg:py-3 rounded-xl transition-all hover:scale-105 shadow-md hover:shadow-lg text-sm lg:text-base">
               Começar Agora
             </Button>
