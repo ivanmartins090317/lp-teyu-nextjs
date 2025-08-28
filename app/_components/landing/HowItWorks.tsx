@@ -91,7 +91,7 @@ const HowItWorks = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="font-open-sans font-bold text-4xl md:text-5xl lg:text-6xl text-[#6a5c27] mb-6">
-            Como Funciona
+            Como Funciona a Guardaria
           </h2>
           <p className="font-source text-xl md:text-2xl text-[#5f5f5e] max-w-4xl mx-auto leading-relaxed">
             Um processo simples, rápido e seguro para você acessar os melhores serviços de
