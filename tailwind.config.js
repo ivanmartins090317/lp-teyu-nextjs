@@ -17,7 +17,9 @@ export default defineConfig({
       },
       fontFamily: {
         "open-sans": ["var(--font-open-sans)", "Arial", "Helvetica", "sans-serif"],
-        source: ["var(--font-source-sans-3)", "Arial", "Helvetica", "sans-serif"]
+        source: ["var(--font-source-sans-3)", "Arial", "Helvetica", "sans-serif"],
+        "libre-baskerville": ["var(--font-libre-baskerville)", "Georgia", "serif"],
+        "libre-baskerville-italic": ["var(--font-libre-baskerville)", "Georgia", "serif"]
       }
     }
   }

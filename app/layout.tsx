@@ -1,7 +1,14 @@
 import type {Metadata} from "next";
-import {Open_Sans, Source_Sans_3} from "next/font/google";
+import {Open_Sans, Source_Sans_3, Libre_Baskerville} from "next/font/google";
 import "./globals.css";
 import {AuthProvider} from "./_contexts/AuthContext";
+
+const libreBaskerville = Libre_Baskerville({
+  variable: "--font-libre-baskerville",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"]
+});
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -48,6 +55,9 @@ export const metadata: Metadata = {
     description:
       "Guardaria, organização, estilo e praticidade. Serviços premium pensados para quem valoriza qualidade e tempo.",
     images: ["/favicon_teyu.png"]
+  },
+  other: {
+    "adobe-fonts-myriad-pro": "https://use.typekit.net/deh7ypx.css"
   }
 };
 
@@ -59,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${openSans.variable} ${sourceSans3.variable} antialiased`}
+        className={`${openSans.variable} ${sourceSans3.variable} ${libreBaskerville.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         <AuthProvider>{children}</AuthProvider>
