@@ -224,7 +224,7 @@ const Testimonials = () => {
             <div className="text-3xl font-playfair font-bold text-[#e3b653]">4.9★</div>
             <div className="font-source text-neutral-600">Avaliação média</div>
             <div className="font-source text-sm text-neutral-500">
-              + de 1.200 avaliações
+              + de 1.000 avaliações
             </div>
           </div>
           <div className="space-y-2">
@@ -242,9 +242,11 @@ const Testimonials = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl font-playfair font-bold text-[#e3b653]">500+</div>
+            <div className="text-3xl font-playfair font-bold text-[#e3b653]">100+</div>
             <div className="font-source text-neutral-600">Clientes</div>
-            <div className="font-source text-sm text-neutral-500">Famílias atendidas</div>
+            <div className="font-source text-sm text-neutral-500">
+              Surfistas atendidos
+            </div>
           </div>
         </div>
 
