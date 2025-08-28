@@ -29,7 +29,7 @@ const HeroSection = () => {
                   Menos preocupação com a prancha.
                 </span>
               </h1> */}
-              <div className="w-full flex justify-center p-0 m-0 mt-20 md:mt-8 2xl:mt-18">
+              <div className="w-full flex justify-center p-0 m-0 mt-20 md:mt-15 2xl:mt-18">
                 <MotionImage
                   src="/logo_hero_teyu_02.svg"
                   width={400}
@@ -38,18 +38,20 @@ const HeroSection = () => {
                   initial={{opacity: 0, scale: 0.8}}
                   animate={{opacity: 1, scale: 1}}
                   transition={{duration: 0.6}}
-                  className="w-[89%] h-auto md:w-[66%] ml-[-2%]"
+                  className="w-[92%] h-auto md:w-[62%] ml-[-2%]"
                 />
               </div>
-              <motion.p
-                initial={{opacity: 0, y: 10}}
-                animate={{opacity: 1, y: 0}}
-                transition={{duration: 0.6, delay: 0.8}}
-                className="font-semibold text-sm md:text-xl text-[#e5dfda] mb-0 leading-relaxed max-w-3xl mx-auto"
-              >
-                Guarde, repare e viva a experiência completa do surfe <br /> em um único
-                lugar, fácil, prático e seguro.
-              </motion.p>
+              <div className="w-[90%] mx-auto text-center mt-5">
+                <motion.p
+                  initial={{opacity: 0, y: 10}}
+                  animate={{opacity: 1, y: 0}}
+                  transition={{duration: 0.6, delay: 0.8}}
+                  className="font-semibold font-libre-baskerville-italic italic text-sm md:text-2xl text-[#e5dfda] mb-0 leading-relaxed max-w-2.4xl mx-auto"
+                >
+                  Guarde, repare e viva a experiência completa <br /> do surfe em um único
+                  lugar.
+                </motion.p>
+              </div>
             </div>
 
             {/* CTA Buttons */}
@@ -60,7 +62,7 @@ const HeroSection = () => {
                   animate={{opacity: 1, scale: 1}}
                   transition={{duration: 0.4, delay: 0.5}}
                   onClick={handleOpenModal}
-                  className="w-[73%] mx-auto md:w-auto bg-[#e3b653] hover:bg-[#e3b653]/20 hover:text-[#e5dfda] text-[#5e4e3d] font-source font-semibold px-8 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-xl"
+                  className="w-[53%] md:w-[20%] text-sm mx-auto bg-[#e3b653] hover:bg-[#e3b653]/20 hover:text-[#e5dfda] text-[#5e4e3d] font-source font-semibold px-20 py-4 rounded-lg  transition-all hover:scale-105 shadow-xl"
                 >
                   Experiência completa
                   <ArrowRight className="w-5 h-5 ml-2" />
