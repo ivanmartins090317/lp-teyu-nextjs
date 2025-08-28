@@ -47,9 +47,7 @@ const VideoSection = forwardRef<HTMLElement>((props, ref) => {
               <h3 className="font-source font-semibold text-[#6a5c27]">
                 Demonstração Completa
               </h3>
-              <p className="text-sm text-[#5f5f5e]">
-                Veja todos os nossos serviços em ação
-              </p>
+              <p className="text-sm text-[#5f5f5e]">Veja como funciona a Guardaria</p>
             </div>
 
             <div className="text-center space-y-2">
@@ -60,7 +58,7 @@ const VideoSection = forwardRef<HTMLElement>((props, ref) => {
                 Serviços Premium
               </h3>
               <p className="text-sm text-[#5f5f5e]">
-                Ampla gama de soluções para sua casa
+                Você aproveita o surf, nós cuidamos do resto
               </p>
             </div>
 
