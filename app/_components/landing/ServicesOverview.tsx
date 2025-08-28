@@ -1,63 +1,73 @@
 import React from "react";
-import {Sparkles, Wrench, Scissors, Car, Baby, Utensils} from "lucide-react";
+import {LockKeyhole, Store} from "lucide-react";
 import {Card, CardContent, CardHeader, CardTitle} from "../shared/ui/card";
 import {Badge} from "../shared/ui/badge";
 
 const ServicesOverview = () => {
   const serviceCategories = [
     {
-      icon: Sparkles,
-      title: "Limpeza & Organização",
-      description: "Faxina completa, limpeza pós-obra, organização de ambientes",
+      icon: LockKeyhole,
+      title: "Teyu Guardaria",
+      description: "Local seguro para a sua pranchas e espaço para seus pertences.",
       services: [
-        "Faxina residencial",
-        "Limpeza pós-obra",
-        "Organização",
-        "Limpeza de carpetes"
+        "Guardaria de Pranchas",
+        "Guarda Volumes/Lockers",
+        "Chuveiro",
+        "Reparo de Prancha",
+        "Aulas de Surfe"
       ],
       color: "bg-[#e3b653]/20",
-      popular: true
-    },
-    {
-      icon: Wrench,
-      title: "Manutenção & Reparos",
-      description: "Eletricista, encanador, pintor e serviços gerais",
-      services: ["Eletricista", "Encanador", "Pintor", "Marcenaria"],
-      color: "bg-[#e3b653]/20",
       popular: false
     },
     {
-      icon: Scissors,
-      title: "Beleza & Bem-estar",
-      description: "Cabeleireiro, manicure, massagem no conforto da sua casa",
-      services: ["Cabelo", "Manicure", "Massagem", "Estética"],
-      color: "bg-[#e3b653]/20",
-      popular: false
-    },
-    {
-      icon: Car,
-      title: "Automotivo",
-      description: "Lavagem, enceramento e detalhamento do seu veículo",
-      services: ["Lavagem", "Enceramento", "Detalhamento", "Limpeza interna"],
-      color: "bg-[#e3b653]/20",
-      popular: false
-    },
-    {
-      icon: Baby,
-      title: "Cuidados Pessoais",
-      description: "Babá, cuidador de idosos, pet sitting",
-      services: ["Babá", "Cuidador", "Pet sitting", "Acompanhante"],
-      color: "bg-[#e3b653]/20",
-      popular: false
-    },
-    {
-      icon: Utensils,
-      title: "Gastronomia",
-      description: "Chef particular, eventos, refeições saudáveis",
-      services: ["Chef particular", "Eventos", "Meal prep", "Confeitaria"],
+      icon: Store,
+      title: "Teyu Prancharia",
+      description:
+        "Local onde você encontra as melhores pranchas e acessórios para surfar.",
+      services: [
+        "Acessórios de Surfe",
+        "Acessórios de Praia",
+        "Bem Estar",
+        "Equipamentos de Surf",
+        "Pranchas Nova",
+        "Pranchas Usadas",
+        "Moda e vestuário"
+      ],
       color: "bg-[#e3b653]/20",
       popular: false
     }
+    // {
+    //   icon: Scissors,
+    //   title: "Beleza & Bem-estar",
+    //   description: "Cabeleireiro, manicure, massagem no conforto da sua casa",
+    //   services: ["Cabelo", "Manicure", "Massagem", "Estética"],
+    //   color: "bg-[#e3b653]/20",
+    //   popular: false
+    // },
+    // {
+    //   icon: Car,
+    //   title: "Automotivo",
+    //   description: "Lavagem, enceramento e detalhamento do seu veículo",
+    //   services: ["Lavagem", "Enceramento", "Detalhamento", "Limpeza interna"],
+    //   color: "bg-[#e3b653]/20",
+    //   popular: false
+    // },
+    // {
+    //   icon: Baby,
+    //   title: "Cuidados Pessoais",
+    //   description: "Babá, cuidador de idosos, pet sitting",
+    //   services: ["Babá", "Cuidador", "Pet sitting", "Acompanhante"],
+    //   color: "bg-[#e3b653]/20",
+    //   popular: false
+    // },
+    // {
+    //   icon: Utensils,
+    //   title: "Gastronomia",
+    //   description: "Chef particular, eventos, refeições saudáveis",
+    //   services: ["Chef particular", "Eventos", "Meal prep", "Confeitaria"],
+    //   color: "bg-[#e3b653]/20",
+    //   popular: false
+    // }
   ];
 
   return (
@@ -74,7 +84,7 @@ const ServicesOverview = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {serviceCategories.map((category, index) => (
               <Card
                 key={index}
@@ -122,6 +132,12 @@ const ServicesOverview = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="flex justify-center text-center text-[#6a5c27] mt-10">
+            <small>
+              *A nossa loja fisica (Teyu Prancharia) fica aberto ao publico da 09:00 as
+              17:00 não nescessita marcar horario
+            </small>
           </div>
         </div>
       </div>
