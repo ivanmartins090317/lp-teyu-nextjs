@@ -35,7 +35,8 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.instagram.com/teyusurf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#e3b653] transition-colors"
               >
                 <Instagram className="w-5 h-5" />
@@ -60,33 +61,67 @@ const Footer = () => {
             <h4 className="font-playfair font-bold text-lg">Serviços</h4>
             <ul className="space-y-3 font-source text-neutral-300">
               <li>
-                <a href="#" className="hover:text-[#e3b653] transition-colors">
-                  Limpeza Residencial
+                <a
+                  href="#servicos"
+                  className="hover:text-[#servicose3b653] transition-colors"
+                >
+                  Guardaria de pranchas
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#e3b653] transition-colors">
-                  Manutenção & Reparos
+                <a
+                  href="#servicos"
+                  className="hover:text-[#servicose3b653] transition-colors"
+                >
+                  Guardaria de volumes / lockers
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#e3b653] transition-colors">
-                  Beleza & Bem-estar
+                <a
+                  href="#servicos"
+                  className="hover:text-[#servicose3b653] transition-colors"
+                >
+                  Reparos de pranchas
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gold transition-colors">
-                  Serviços Automotivos
+                <a href="#servicos" className="hover:text-gold transition-colors">
+                  Aulas de surf
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gold transition-colors">
-                  Cuidados Pessoais
+                <a href="#servicos" className="hover:text-gold transition-colors">
+                  Acessórios de surf
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gold transition-colors">
-                  Gastronomia
+                <a href="#servicos" className="hover:text-gold transition-colors">
+                  Acessórios de praia
+                </a>
+              </li>
+              <li>
+                <a href="#servicos" className="hover:text-gold transition-colors">
+                  Bem estar
+                </a>
+              </li>
+              <li>
+                <a href="#servicos" className="hover:text-gold transition-colors">
+                  Equipamentos de surf
+                </a>
+              </li>
+              <li>
+                <a href="#servicos" className="hover:text-gold transition-colors">
+                  Pranchas nova
+                </a>
+              </li>
+              <li>
+                <a href="#servicos" className="hover:text-gold transition-colors">
+                  Pranchas usadas
+                </a>
+              </li>
+              <li>
+                <a href="#servicos" className="hover:text-gold transition-colors">
+                  Moda e vestuário
                 </a>
               </li>
             </ul>
@@ -97,8 +132,13 @@ const Footer = () => {
             <h4 className="font-playfair font-bold text-lg">Links Rápidos</h4>
             <ul className="space-y-3 font-source text-neutral-300">
               <li>
+                <a href="#sobre-nos" className="hover:text-gold transition-colors">
+                  Sobre Nós
+                </a>
+              </li>
+              <li>
                 <a href="#servicos" className="hover:text-gold transition-colors">
-                  Nossos Serviços
+                  Serviços
                 </a>
               </li>
               <li>
@@ -111,21 +151,6 @@ const Footer = () => {
                   Depoimentos
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-gold transition-colors">
-                  Sobre Nós
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-gold transition-colors">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-gold transition-colors">
-                  Carreiras
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -135,17 +160,19 @@ const Footer = () => {
             <div className="space-y-4 font-source text-neutral-300">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-gold" />
-                <span>(11) 99999-9999</span>
+                <span>(13) 99737-7070</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-gold" />
-                <span>contato@teyu.com</span>
+                <span>teyusurf@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-gold mt-1" />
                 <div>
                   <div>Santos, SP</div>
-                  <div className="text-sm text-neutral-400">Rua Maranhão, 72</div>
+                  <div className="text-sm text-neutral-400">
+                    Maranhão, 70 - Pompéia, 11075-020
+                  </div>
                 </div>
               </div>
             </div>
