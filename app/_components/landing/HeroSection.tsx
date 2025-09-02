@@ -29,7 +29,7 @@ const HeroSection = () => {
                   Menos preocupação com a prancha.
                 </span>
               </h1> */}
-              <div className="w-full flex justify-center p-0 m-0 mt-20 md:mt-15 2xl:mt-18">
+              <div className="w-full flex justify-center p-0 m-0 mt-20 md:mt-15 2xl:mt-18 lg:mt-15">
                 <MotionImage
                   src="/logo_hero_teyu_02.svg"
                   width={400}
@@ -38,7 +38,7 @@ const HeroSection = () => {
                   initial={{opacity: 0, scale: 0.8}}
                   animate={{opacity: 1, scale: 1}}
                   transition={{duration: 0.6}}
-                  className="w-[92%] h-auto md:w-[62%] ml-[-2%]"
+                  className="w-[92%] h-auto md:w-[52%] ml-[1%] lg:w-[50%]"
                 />
               </div>
               <div className="w-[90%] mx-auto text-center mt-5">
@@ -46,7 +46,7 @@ const HeroSection = () => {
                   initial={{opacity: 0, y: 10}}
                   animate={{opacity: 1, y: 0}}
                   transition={{duration: 0.6, delay: 0.8}}
-                  className="font-semibold font-libre-baskerville-italic italic text-sm md:text-2xl text-[#e5dfda] mb-0 leading-relaxed max-w-2.4xl mx-auto"
+                  className="font-semibold font-libre-baskerville-italic italic text-sm md:text-2xl lg:text-2xl text-[#e5dfda] mb-0 leading-relaxed max-w-2.4xl mx-auto"
                 >
                   Guarde, repare e viva a experiência completa <br /> do surfe em um único
                   lugar.
