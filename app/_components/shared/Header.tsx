@@ -68,6 +68,15 @@ const Header = () => {
               Depoimentos
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
+            <a
+              href="/forecast"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
+            >
+              Previsão
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
+            </a>
           </nav>
 
           {/* CTA Button */}
@@ -118,6 +127,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Depoimentos
+              </a>
+              <a
+                href="/forecast"
+                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Previsão
               </a>
               <div className="pt-4 border-t border-neutral-200 mt-4">
                 <Button className="w-full bg-[#6a5c27] hover:bg-[#6a5c27]/80 text-white font-source font-semibold px-6 py-3 rounded-xl transition-all shadow-md">
