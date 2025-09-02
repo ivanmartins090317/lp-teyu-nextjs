@@ -14,7 +14,10 @@
   --accent: #f1f5f9;
   --accent-foreground: #0f172a;
 }
-
+.forecast-page {
+  --background: #ffffff !important;
+  --foreground: #171717 !important;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
