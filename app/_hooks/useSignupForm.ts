@@ -90,15 +90,19 @@ export const useSignupForm = (onSuccess: (contractData: ContractData) => void) =
 
         if (error.code === "23505") {
           toast({
-            title: "Email já cadastrado",
-            description: "Este email já está registrado em nosso sistema.",
-            variant: "destructive"
+            title: "🏄‍♂️ Email já cadastrado na Teyu",
+            description:
+              "Este email já está registrado em nosso sistema. Entre em contato conosco para verificar sua conta: (13) 99737-7070 ou teyusurf@gmail.com",
+            variant: "destructive",
+            duration: 8000 // 8 segundos para dar tempo de ler
           });
         } else {
           toast({
-            title: "Erro ao cadastrar",
-            description: "Ocorreu um erro ao criar sua conta. Tente novamente.",
-            variant: "destructive"
+            title: "❌ Erro ao cadastrar",
+            description:
+              "Ocorreu um erro ao criar sua conta. Tente novamente ou entre em contato: (13) 99737-7070",
+            variant: "destructive",
+            duration: 6000
           });
         }
         return;
@@ -107,8 +111,9 @@ export const useSignupForm = (onSuccess: (contractData: ContractData) => void) =
       console.log("Usuário salvo com sucesso:", data);
 
       toast({
-        title: "Cadastro realizado com sucesso!",
-        description: `Sua conta foi criada. Contrato ${numeroContrato} pronto para download.`
+        title: "✅ Cadastro realizado com sucesso!",
+        description: `Sua conta foi criada. Contrato ${numeroContrato} pronto para download.`,
+        duration: 5000
       });
 
       resetForm();
@@ -116,9 +121,10 @@ export const useSignupForm = (onSuccess: (contractData: ContractData) => void) =
     } catch (error) {
       console.error("Erro inesperado:", error);
       toast({
-        title: "Erro inesperado",
-        description: "Algo deu errado. Tente novamente.",
-        variant: "destructive"
+        title: "❌ Erro inesperado",
+        description: "Algo deu errado. Entre em contato conosco: (13) 99737-7070",
+        variant: "destructive",
+        duration: 6000
       });
     } finally {
       setIsLoading(false);

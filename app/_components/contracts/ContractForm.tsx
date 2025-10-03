@@ -39,7 +39,15 @@ export const ContractForm: React.FC<ContractFormProps> = ({
     data_inicio: "",
     data_fim: "",
     status: "ativo",
-    observacoes: ""
+    observacoes: "",
+    // Campos específicos para guarda de prancha
+    marca_prancha: "",
+    modelo_prancha: "",
+    tamanho_prancha: "",
+    cor_prancha: "",
+    valor_mensal: "",
+    periodo_guarda: "",
+    observacoes_prancha: ""
   });
 
   useEffect(() => {
@@ -53,7 +61,15 @@ export const ContractForm: React.FC<ContractFormProps> = ({
         data_inicio: editingContract.data_inicio,
         data_fim: editingContract.data_fim || "",
         status: editingContract.status,
-        observacoes: editingContract.observacoes || ""
+        observacoes: editingContract.observacoes || "",
+        // Campos específicos para guarda de prancha
+        marca_prancha: "",
+        modelo_prancha: "",
+        tamanho_prancha: "",
+        cor_prancha: "",
+        valor_mensal: "",
+        periodo_guarda: "",
+        observacoes_prancha: ""
       });
     } else {
       setFormData({
@@ -65,7 +81,15 @@ export const ContractForm: React.FC<ContractFormProps> = ({
         data_inicio: "",
         data_fim: "",
         status: "ativo",
-        observacoes: ""
+        observacoes: "",
+        // Campos específicos para guarda de prancha
+        marca_prancha: "",
+        modelo_prancha: "",
+        tamanho_prancha: "",
+        cor_prancha: "",
+        valor_mensal: "",
+        periodo_guarda: "",
+        observacoes_prancha: ""
       });
     }
   }, [editingContract]);
@@ -222,6 +246,12 @@ export const ContractForm: React.FC<ContractFormProps> = ({
                   <SelectValue placeholder="Selecione o tipo de serviço" />
                 </SelectTrigger>
                 <SelectContent className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600">
+                  <SelectItem
+                    value="Guarda de Prancha de Surf"
+                    className="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >
+                    🏄‍♂️ Guarda de Prancha de Surf
+                  </SelectItem>
                   <SelectItem
                     value="Consultoria Empresarial"
                     className="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-600"
@@ -388,6 +418,128 @@ export const ContractForm: React.FC<ContractFormProps> = ({
                 className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white min-h-[80px] text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
+          </div>
+        </div>
+
+        {/* Seção Dados da Prancha */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-4 space-y-4 border border-blue-200 dark:border-blue-800">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white border-b border-blue-200 dark:border-blue-700 pb-2 flex items-center gap-2">
+            🏄‍♂️ Dados da Prancha de Surf
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-3">
+              <Label
+                htmlFor="marca_prancha"
+                className="text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
+                Marca da Prancha
+              </Label>
+              <Input
+                id="marca_prancha"
+                value={formData.marca_prancha}
+                onChange={(e) => updateFormData("marca_prancha", e.target.value)}
+                placeholder="Ex: Channel Islands, Lost, Firewire..."
+                className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white h-11 text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            <div className="space-y-3">
+              <Label
+                htmlFor="modelo_prancha"
+                className="text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
+                Modelo da Prancha
+              </Label>
+              <Input
+                id="modelo_prancha"
+                value={formData.modelo_prancha}
+                onChange={(e) => updateFormData("modelo_prancha", e.target.value)}
+                placeholder="Ex: CI Pro, Lost Driver, Firewire Seaside..."
+                className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white h-11 text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            <div className="space-y-3">
+              <Label
+                htmlFor="tamanho_prancha"
+                className="text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
+                Tamanho da Prancha
+              </Label>
+              <Input
+                id="tamanho_prancha"
+                value={formData.tamanho_prancha}
+                onChange={(e) => updateFormData("tamanho_prancha", e.target.value)}
+                placeholder="Ex: 5'8, 6'0, 6'2..."
+                className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white h-11 text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            <div className="space-y-3">
+              <Label
+                htmlFor="cor_prancha"
+                className="text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
+                Cor da Prancha
+              </Label>
+              <Input
+                id="cor_prancha"
+                value={formData.cor_prancha}
+                onChange={(e) => updateFormData("cor_prancha", e.target.value)}
+                placeholder="Ex: Branca, Azul, Amarela..."
+                className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white h-11 text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            <div className="space-y-3">
+              <Label
+                htmlFor="valor_mensal"
+                className="text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
+                Valor Mensal (R$)
+              </Label>
+              <Input
+                id="valor_mensal"
+                type="number"
+                value={formData.valor_mensal}
+                onChange={(e) => updateFormData("valor_mensal", e.target.value)}
+                placeholder="Ex: 150, 200, 250..."
+                className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white h-11 text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            <div className="space-y-3">
+              <Label
+                htmlFor="periodo_guarda"
+                className="text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
+                Período de Guarda
+              </Label>
+              <Input
+                id="periodo_guarda"
+                value={formData.periodo_guarda}
+                onChange={(e) => updateFormData("periodo_guarda", e.target.value)}
+                placeholder="Ex: 6 meses, 1 ano, Indefinido..."
+                className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white h-11 text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <Label
+              htmlFor="observacoes_prancha"
+              className="text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
+              Observações sobre a Prancha
+            </Label>
+            <Textarea
+              id="observacoes_prancha"
+              value={formData.observacoes_prancha}
+              onChange={(e) => updateFormData("observacoes_prancha", e.target.value)}
+              placeholder="Informações adicionais sobre a prancha, como estado, acessórios, etc..."
+              className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white min-h-[80px] text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
           </div>
         </div>
 

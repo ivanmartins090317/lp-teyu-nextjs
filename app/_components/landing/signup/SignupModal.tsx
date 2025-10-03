@@ -15,6 +15,9 @@ const SignupModal = ({isOpen, onClose}: SignupModalProps) => {
 
   const [showSuccess, setShowSuccess] = useState(false);
   const [contractData, setContractData] = useState<ContractData | null>(null);
+  const [emailStatus, setEmailStatus] = useState<
+    "idle" | "checking" | "exists" | "available"
+  >("idle");
 
   const handleSuccess = (data: ContractData) => {
     setContractData(data);
@@ -25,6 +28,7 @@ const SignupModal = ({isOpen, onClose}: SignupModalProps) => {
     console.log("SignupModal handleClose chamado");
     setShowSuccess(false);
     setContractData(null);
+    setEmailStatus("idle");
     onClose();
   };
 
@@ -62,8 +66,12 @@ const SignupModal = ({isOpen, onClose}: SignupModalProps) => {
                     formData={formData}
                     isLoading={isLoading}
                     onInputChange={handleInputChange}
+                    onEmailStatusChange={setEmailStatus}
                   />
-                  <SignupFormFooter isLoading={isLoading} />
+                  <SignupFormFooter
+                    isLoading={isLoading}
+                    emailExists={emailStatus === "exists"}
+                  />
                 </form>
               )}
             </div>
