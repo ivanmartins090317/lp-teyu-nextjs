@@ -198,7 +198,7 @@ const Footer = () => {
               © {currentYear} Teyu | Guardaria & Prancharia. Todos os direitos reservados.
             </div>
             <div className="flex space-x-6 font-source text-sm text-neutral-300">
-              <a href="#" className="hover:text-gold transition-colors">
+              <a href="/privacy" className="hover:text-gold transition-colors">
                 Política de Privacidade
               </a>
               <a href="#" className="hover:text-gold transition-colors">
