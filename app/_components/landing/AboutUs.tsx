@@ -38,18 +38,28 @@ export default function AboutUs() {
                 className="space-y-4 text-gray-700 leading-relaxed"
               >
                 <p className="text-base md:text-lg text-[#6a5c27]">
-                  Guilherme Penteado Campos Filho (Gui) redescobriu sua paixão pelo surf
-                  em 2006, quando conheceu Cisco Araña, mestre do longboard. Cisco, por
-                  sua vez, apresentou Gui a Samuel Fragoas, outro grande amante das ondas.
-                  Samuel, que havia se afastado do surf, voltou a surfar para acompanhar
-                  seu filho nas aulas do Cisco.
+                  Guilherme Penteado Campos Filho, ou Gui, começou a surfar nos anos 70 no
+                  Guarujá, mas foi em 2006, após um tempo afastado das ondas, que ele
+                  redescobriu sua paixão pelo surf. Foi nesse retorno que ele conheceu
+                  Cisco Araña, mestre do longboard, e a partir daí, a conexão entre eles
+                  se fortaleceu. Cisco, com sua sabedoria, também apresentou Gui a Samuel
+                  Fragoas, outro grande amante do surf.
+                </p>
+                <p className="text-base md:text-lg text-[#6a5c27]">
+                  Samuel sempre teve o surf no coração, mas com o tempo, o esporte foi
+                  ficando em segundo plano. Sua vida tomou um novo rumo quando sua esposa
+                  matriculou seu filho na escola de Cisco Araña. Para acompanhar o filho
+                  nas aulas, Samuel decidiu voltar a surfar e, ao fazer isso, se
+                  reconectou com sua verdadeira paixão. A amizade entre os três se
+                  fortaleceu, e essa conexão profunda com o surf se transformou em algo
+                  muito maior do que esporte – virou uma filosofia de vida.
                 </p>
 
                 <p className="text-base md:text-lg text-[#6a5c27]">
-                  A amizade entre os dois se fortaleceu, levando à criação da Teyu, um
-                  espaço dedicado a oferecer a melhor experiência de surf, com foco no
-                  equilíbrio, na conexão com o mar e na filosofia de vida que o esporte
-                  representa para eles.
+                  Juntos, Gui e Samuel criaram a Teyu, um espaço que reflete tudo o que
+                  acreditam sobre o surf: uma experiência única de conexão com o mar,
+                  muito mais que simples ondas, mas um estilo de vida que une família,
+                  amigos e a busca constante pelo equilíbrio e pela paz.
                 </p>
               </motion.div>
             </motion.div>
@@ -93,7 +103,7 @@ export default function AboutUs() {
                 >
                   <div className="relative overflow-hidden rounded-2xl shadow-xl ml-10">
                     <Image
-                      src="/pele_teyu_opacity.svg"
+                      src="/pele_teyu_verdemusgo.svg"
                       alt="textura pele teyu"
                       width={400}
                       height={500}

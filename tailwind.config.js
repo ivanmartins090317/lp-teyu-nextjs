@@ -1,6 +1,5 @@
-import {defineConfig} from "@tailwindcss/postcss";
-
-export default defineConfig({
+/** @type {import('tailwindcss').Config} */
+const config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -20,7 +19,14 @@ export default defineConfig({
         source: ["var(--font-source-sans-3)", "Arial", "Helvetica", "sans-serif"],
         "libre-baskerville": ["var(--font-libre-baskerville)", "Georgia", "serif"],
         "libre-baskerville-italic": ["var(--font-libre-baskerville)", "Georgia", "serif"]
+      },
+      screens: {
+        xsm: {max: "379px"},
+        xs: {min: "380px", max: "639px"}
       }
     }
-  }
-});
+  },
+  plugins: []
+};
+
+export default config;
