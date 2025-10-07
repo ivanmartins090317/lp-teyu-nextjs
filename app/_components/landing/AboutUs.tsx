@@ -9,7 +9,7 @@ export default function AboutUs() {
       <div id="sobre-nos" />
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="flex lg:flex-row flex-col gap-12 lg:gap-16 items-center">
+          <div className="flex lg:flex-row flex-col gap-8 lg:gap-10 items-center">
             {/* Conteúdo Principal */}
             <motion.div
               initial={{opacity: 0, x: -50}}
@@ -75,11 +75,11 @@ export default function AboutUs() {
                   viewport={{once: true}}
                   className="relative group"
                 >
-                  <div className="md:w-[68%] absolute overflow-hidden rounded-2xl shadow-x z-10 right-0">
+                  <div className="md:w-[100%] absolute overflow-hidden rounded-2xl shadow-x z-10 right-4">
                     <Image
-                      src="/photo_us_pb_01.jpg"
+                      src="/imagem_sobre_nos_02.png"
                       alt="Nossa equipe - Foto 1"
-                      width={400}
+                      width={1000}
                       height={500}
                       className="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -95,13 +95,13 @@ export default function AboutUs() {
                   viewport={{once: true}}
                   className="relative group md:mt-8"
                 >
-                  <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                  <div className="relative overflow-hidden rounded-2xl shadow-xl ml-10">
                     <Image
                       src="/pele_teyu_opacity.svg"
-                      alt="Nossa equipe - Foto 2"
+                      alt="textura pele teyu"
                       width={400}
                       height={500}
-                      className="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-[300px] md:h-[400px] lg:h-[450px] lg:max-w-[100%] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="relative inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
