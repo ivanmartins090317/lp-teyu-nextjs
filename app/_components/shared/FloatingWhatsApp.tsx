@@ -2,20 +2,22 @@
 
 import React from "react";
 import {MessageCircle} from "lucide-react";
+import {useWhatsApp} from "@/app/_hooks/useWhatsApp";
 
 const FloatingWhatsApp = () => {
-  const handleWhatsAppClick = () => {
-    const phoneNumber = "5511999999999"; // Substitua pelo número real
-    const message = "Olá! Gostaria de falar com um especialista sobre os serviços.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(whatsappUrl, "_blank");
-  };
+  // const handleWhatsAppClick = () => {
+  //   const phoneNumber = "5511999999999"; // Substitua pelo número real
+  //   const message = "Olá! Gostaria de falar com um especialista sobre os serviços.";
+  //   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+  //     message
+  //   )}`;
+  //   window.open(whatsappUrl, "_blank");
+  // };
+  const {openWhatsApp} = useWhatsApp();
 
   return (
     <button
-      onClick={handleWhatsAppClick}
+      onClick={() => openWhatsApp()}
       className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-50 group"
       aria-label="Falar no WhatsApp"
     >

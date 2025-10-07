@@ -3,6 +3,7 @@
 import React, {useState} from "react";
 import {Menu, X} from "lucide-react";
 import {Button} from "./ui/button";
+import {ShareButton} from "./ShareButton";
 import Image from "next/image";
 
 const Header = () => {
@@ -77,8 +78,8 @@ const Header = () => {
               Previsão
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
+            <ShareButton />
           </nav>
-
           {/* CTA Button */}
           <div className="hidden ">
             <Button className="bg-[#e3b653] hover:bg-[#e3b653]/20 text-[#5e4e3d] font-source font-semibold px-6 lg:px-8 py-2 lg:py-3 rounded-xl transition-all hover:scale-105 shadow-md hover:shadow-lg text-sm lg:text-base">
@@ -140,6 +141,7 @@ const Header = () => {
                   Começar Agora
                 </Button>
               </div>
+              <ShareButton />
             </nav>
           </div>
         )}

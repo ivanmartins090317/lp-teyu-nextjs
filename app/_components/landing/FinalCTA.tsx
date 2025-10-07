@@ -3,6 +3,7 @@
 import React, {useState} from "react";
 import {CheckCircle, Gift, Clock, Shield} from "lucide-react";
 import SignupModal from "./signup/SignupModal";
+import {useWhatsApp} from "@/app/_hooks/useWhatsApp";
 
 const FinalCTA = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,14 +18,9 @@ const FinalCTA = () => {
     setIsModalOpen(false);
   };
 
-  const handleWhatsAppClick = () => {
-    const phoneNumber = "5511999999999"; // Substitua pelo número real
-    const message = "Olá! Gostaria de falar com um especialista sobre os serviços.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(whatsappUrl, "_blank");
-  };
+  const {openWhatsApp} = useWhatsApp({
+    defaultMessage: "Quero fazer parte da guardaria!"
+  });
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-[#e5dfda] via-[#e5dfda]/95 to-[#e5dfda]/90 text-[#6a5c27] relative overflow-hidden">
@@ -80,7 +76,7 @@ const FinalCTA = () => {
                 Criar Minha Conta Grátis
               </button>
               <button
-                onClick={handleWhatsAppClick}
+                onClick={() => openWhatsApp()}
                 className="border-1 border-[#6a5c27] text-[#6a5c27] hover:bg-[#6a5c27]/20 hover:text-[#6a5c27] font-source font-semibold px-12 py-4 rounded-lg text-lg transition-all"
               >
                 Falar com Especialista
