@@ -11,11 +11,14 @@ import {
   CarouselItem,
   CarouselApi
 } from "../shared/ui/carousel";
+import {useWhatsApp} from "@/app/_hooks/useWhatsApp";
 
 const Testimonials = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
+
+  const {openWhatsApp} = useWhatsApp();
 
   React.useEffect(() => {
     if (!api) {
@@ -40,58 +43,58 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Maria Silva",
-      location: "Vila Madalena, SP",
-      service: "Limpeza Residencial",
+      name: "Carlos Mendes",
+      location: "Santos, SP",
+      service: "Guardaria de Pranchas",
       rating: 5,
       comment:
-        "Excelente serviço! A profissional foi muito cuidadosa e deixou minha casa impecável. Super recomendo a Conceitual.",
-      initials: "MS"
+        "Finalmente encontrei um lugar seguro para deixar minha prancha! O serviço da Teyu é excepcional, sempre cuidadas e organizadas.",
+      initials: "CM"
     },
     {
-      name: "Carlos Oliveira",
-      location: "Brooklin, SP",
-      service: "Reparo Elétrico",
+      name: "Ana Beatriz",
+      location: "São Paulo, SP",
+      service: "Aulas de Surfe",
       rating: 5,
       comment:
-        "Precisava de um eletricista urgente e consegui agendar para o mesmo dia. Profissional competente e preço justo.",
-      initials: "CO"
+        "As aulas de surfe da Teyu transformaram minha experiência na água. Instrutores experientes e muito pacientes. Recomendo!",
+      initials: "AB"
     },
     {
-      name: "Ana Costa",
-      location: "Pinheiros, SP",
-      service: "Organização de Closet",
+      name: "Roberto Silva",
+      location: "São Vicente, SP",
+      service: "Reparo de Prancha",
       rating: 5,
       comment:
-        "Transformaram meu closet completamente! Agora encontro tudo facilmente. Valeu cada centavo investido.",
-      initials: "AC"
-    },
-    {
-      name: "Roberto Santos",
-      location: "Moema, SP",
-      service: "Lavagem Automotiva",
-      rating: 5,
-      comment:
-        "Meu carro ficou como novo! Serviço de detalhamento excepcional, no conforto da minha garagem.",
+        "Minha prancha estava com um dano sério e eles fizeram um trabalho perfeito! Ficou como nova e o preço foi justo.",
       initials: "RS"
     },
     {
-      name: "Juliana Ferreira",
-      location: "Itaim Bibi, SP",
-      service: "Cabeleireiro em Casa",
+      name: "Marina Costa",
+      location: "Praia Grande, SP",
+      service: "Teyu Prancharia",
       rating: 5,
       comment:
-        "Adorei ter uma cabeleireira profissional em casa. Economia de tempo e resultado perfeito!",
-      initials: "JF"
+        "A loja tem tudo que um surfista precisa! Equipamentos de qualidade, preços justos e atendimento personalizado.",
+      initials: "MC"
     },
     {
-      name: "Pedro Lima",
-      location: "Jardins, SP",
-      service: "Pintura Residencial",
+      name: "Pedro Santos",
+      location: "São Bernardo do Campo, SP",
+      service: "Guarda Volumes",
       rating: 5,
       comment:
-        "Pintaram minha sala e ficou perfeita. Profissionais pontuais, organizados e preço competitivo.",
-      initials: "PL"
+        "Perfeito para quem vem de longe! Deixo meus pertences seguros e posso curtir a praia sem preocupação.",
+      initials: "PS"
+    },
+    {
+      name: "Juliana Lima",
+      location: "Mongaguá, SP",
+      service: "Acessórios de Surfe",
+      rating: 5,
+      comment:
+        "Encontrei todos os acessórios que precisava em um só lugar. Qualidade excelente e variedade incrível!",
+      initials: "JL"
     }
   ];
 
@@ -259,8 +262,11 @@ const Testimonials = () => {
             <p className="font-source text-[#5f5f5e] mb-6">
               Faça parte da nossa comunidade e transforme sua rotina com serviços premium.
             </p>
-            <button className="bg-[#e3b653] hover:bg-[#6a5c27] text-[#6a5c27] hover:text-[#e5dfda] font-source font-bold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-xl">
-              Começar Agora
+            <button
+              onClick={() => openWhatsApp()}
+              className="bg-[#e3b653] hover:bg-[#6a5c27] text-[#6a5c27] hover:text-[#e5dfda] font-source font-bold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-xl"
+            >
+              Vamos conversar?
             </button>
           </div>
         </div>
