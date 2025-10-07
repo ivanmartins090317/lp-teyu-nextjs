@@ -44,7 +44,7 @@ const FinalCTA = () => {
               Comece hoje mesmo a ter mais tempo para o que importa
             </h2>
             <p className="font-source text-lg md:text-xl text-[#5f5f5e] max-w-2xl mx-auto leading-relaxed">
-              Cadastre-se agora e ganhe 15% de desconto no primeiro serviço. Oferta válida
+              Cadastre-se agora e ganhe 10% de desconto no primeiro serviço. Oferta válida
               por tempo limitado.
             </p>
           </div>
@@ -52,7 +52,7 @@ const FinalCTA = () => {
           {/* Benefits */}
           <div className="grid md:grid-cols-4 gap-6 mb-12">
             {[
-              {icon: Gift, text: "15% de desconto"},
+              {icon: Gift, text: "10% de desconto"},
               {icon: Clock, text: "Sem compromisso"},
               {icon: Shield, text: "Segurança garantida"},
               {icon: CheckCircle, text: "Qualidade premium"}

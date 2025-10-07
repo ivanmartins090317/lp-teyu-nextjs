@@ -14,6 +14,7 @@ const ServicesOverview = () => {
         "Guarda Volumes/Lockers",
         "Chuveiro",
         "Reparo de Prancha",
+        "Uber reparo de prancha",
         "Aulas de Surfe"
       ],
       color: "bg-[#e3b653]/20",
@@ -36,38 +37,6 @@ const ServicesOverview = () => {
       color: "bg-[#e3b653]/20",
       popular: false
     }
-    // {
-    //   icon: Scissors,
-    //   title: "Beleza & Bem-estar",
-    //   description: "Cabeleireiro, manicure, massagem no conforto da sua casa",
-    //   services: ["Cabelo", "Manicure", "Massagem", "Estética"],
-    //   color: "bg-[#e3b653]/20",
-    //   popular: false
-    // },
-    // {
-    //   icon: Car,
-    //   title: "Automotivo",
-    //   description: "Lavagem, enceramento e detalhamento do seu veículo",
-    //   services: ["Lavagem", "Enceramento", "Detalhamento", "Limpeza interna"],
-    //   color: "bg-[#e3b653]/20",
-    //   popular: false
-    // },
-    // {
-    //   icon: Baby,
-    //   title: "Cuidados Pessoais",
-    //   description: "Babá, cuidador de idosos, pet sitting",
-    //   services: ["Babá", "Cuidador", "Pet sitting", "Acompanhante"],
-    //   color: "bg-[#e3b653]/20",
-    //   popular: false
-    // },
-    // {
-    //   icon: Utensils,
-    //   title: "Gastronomia",
-    //   description: "Chef particular, eventos, refeições saudáveis",
-    //   services: ["Chef particular", "Eventos", "Meal prep", "Confeitaria"],
-    //   color: "bg-[#e3b653]/20",
-    //   popular: false
-    // }
   ];
 
   return (
