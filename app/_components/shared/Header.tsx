@@ -21,7 +21,7 @@ const Header = () => {
             </div> */}
             <div className="w-10 h-10 lg:w-12 lg:h-12">
               <Image
-                src="/favico_teyu_01.png"
+                src="/logo_header.png"
                 alt="logo"
                 width={40}
                 height={40}
