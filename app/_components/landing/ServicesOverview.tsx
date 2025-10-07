@@ -104,8 +104,8 @@ const ServicesOverview = () => {
           </div>
           <div className="flex justify-center text-center text-[#6a5c27] mt-10">
             <small>
-              *A nossa loja fisica (Teyu Prancharia) fica aberto ao publico da 09:00 as
-              17:00 não nescessita marcar horario
+              *A nossa loja física (Teyu Prancharia) fica aberta ao público das 09:00 às
+              17:00. Não necessita marcar horário.
             </small>
           </div>
         </div>
