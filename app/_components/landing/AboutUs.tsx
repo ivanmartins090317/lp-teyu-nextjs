@@ -26,7 +26,7 @@ export default function AboutUs() {
                 viewport={{once: true}}
                 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6a5c27] mb-6 font-source leading-tight"
               >
-                What is Lorem ipsum?
+                Sobre nós
               </motion.h2>
 
               {/* Texto Principal */}
@@ -38,22 +38,18 @@ export default function AboutUs() {
                 className="space-y-4 text-gray-700 leading-relaxed"
               >
                 <p className="text-base md:text-lg text-[#6a5c27]">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting
-                  industry. Lorem Ipsum has been the industry s standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type and
-                  scrambled it to make a type specimen book.
+                  Guilherme Penteado Campos Filho (Gui) redescobriu sua paixão pelo surf
+                  em 2006, quando conheceu Cisco Araña, mestre do longboard. Cisco, por
+                  sua vez, apresentou Gui a Samuel Fragoas, outro grande amante das ondas.
+                  Samuel, que havia se afastado do surf, voltou a surfar para acompanhar
+                  seu filho nas aulas do Cisco.
                 </p>
 
                 <p className="text-base md:text-lg text-[#6a5c27]">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting
-                  industry. Lorem Ipsum has been the industry s standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type and
-                  scrambled it to make a type specimen book. It has survived not only five
-                  centuries, but also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with the release
-                  of Letraset sheets containing Lorem Ipsum passages, and more recently
-                  with desktop publishing software like Aldus PageMaker including versions
-                  of Lorem Ipsum.
+                  A amizade entre os dois se fortaleceu, levando à criação da Teyu, um
+                  espaço dedicado a oferecer a melhor experiência de surf, com foco no
+                  equilíbrio, na conexão com o mar e na filosofia de vida que o esporte
+                  representa para eles.
                 </p>
               </motion.div>
             </motion.div>
