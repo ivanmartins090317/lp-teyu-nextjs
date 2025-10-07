@@ -36,9 +36,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Teyu Guardaria | Viva a experiência completa do surfe",
     description:
-      "Guardaria, organização, estilo e praticidade. Serviços premium pensados para quem valoriza qualidade e tempo.",
+      "Guardaria premium para surfistas. Organize suas pranchas, tenha mais tempo para o surfe. Serviços exclusivos em Santos-SP.",
     type: "website",
     url: "https://www.teyuguardaria.com",
+    siteName: "Teyu Guardaria",
+    locale: "pt_BR",
+    countryName: "Brasil",
     images: [
       {
         url: "/metag_site_opengrafic.png",
@@ -57,7 +60,20 @@ export const metadata: Metadata = {
     images: ["/metag_site_opengrafic.png"]
   },
   other: {
-    "adobe-fonts-myriad-pro": "https://use.typekit.net/deh7ypx.css"
+    "adobe-fonts-myriad-pro": "https://use.typekit.net/deh7ypx.css",
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Teyu Guardaria",
+      description: "Guardaria premium para surfistas",
+      url: "https://www.teyuguardaria.com"
+    }),
+
+    // Meta tags adicionais
+    "theme-color": "#1e40af",
+    "msapplication-TileColor": "#1e40af",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default"
   }
 };
 
