@@ -44,22 +44,6 @@ export default function AboutTeyu() {
                     className="w-full hidden lg:block max-w-md lg:max-w-[100%] rotate-z-[-153deg] mt-[80%] opacity-40"
                   />
                 </motion.div>
-
-                {/* Elementos decorativos */}
-                {/* <motion.div
-                  initial={{opacity: 0, scale: 0}}
-                  whileInView={{opacity: 1, scale: 1}}
-                  transition={{duration: 0.8, delay: 0.8}}
-                  viewport={{once: true}}
-                  className="absolute -top-4 -right-4 w-16 h-16 bg-orange-200 rounded-full opacity-30"
-                />
-                <motion.div
-                  initial={{opacity: 0, scale: 0}}
-                  whileInView={{opacity: 1, scale: 1}}
-                  transition={{duration: 0.8, delay: 1}}
-                  viewport={{once: true}}
-                  className="absolute -bottom-6 -left-6 w-12 h-12 bg-green-200 rounded-full opacity-40"
-                /> */}
               </motion.div>
             </motion.div>
             {/* Texto principal */}
@@ -80,13 +64,12 @@ export default function AboutTeyu() {
                 Da onde vem o nome{" "}
                 <span className="text-[#e3b653]">
                   <Image
-                    src="/logo_about_lp.png"
+                    src="/logo_about_us.png"
                     alt="Ilustração do Teyu"
                     width={400}
                     height={400}
-                    className="w-full max-w-[26%] lg:max-w-[18%] inline-block"
+                    className="w-full max-w-[26%] lg:max-w-[16%] inline-block"
                   />
-                  ?
                 </span>
               </motion.h2>
 
