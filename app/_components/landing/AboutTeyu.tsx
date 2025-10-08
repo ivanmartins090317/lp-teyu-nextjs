@@ -61,14 +61,14 @@ export default function AboutTeyu() {
                 viewport={{once: true}}
                 className="text-4xl lg:text-5xl font-bold text-[#dcd7d1] leading-tight"
               >
-                Da onde vem o nome{" "}
+                Da onde vem o <br className="block md:hidden" /> nome{" "}
                 <span className="text-[#e3b653]">
                   <Image
                     src="/logo_about_us.png"
                     alt="Ilustração do Teyu"
                     width={400}
                     height={400}
-                    className="w-full max-w-[26%] lg:max-w-[16%] inline-block"
+                    className="w-full max-w-20 lg:max-w-30 inline-block"
                   />
                 </span>
               </motion.h2>
