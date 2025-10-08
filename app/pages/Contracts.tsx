@@ -23,19 +23,19 @@ const Contracts = () => {
 
         <div className="flex space-x-4 mb-6">
           <Button
-            variant={activeTab === "users" ? "default" : "outline"}
+            variant={activeTab === "users" ? "outline" : "ghost"}
             onClick={() => setActiveTab("users")}
           >
             Contratos de Usuários
           </Button>
           <Button
-            variant={activeTab === "management" ? "default" : "outline"}
+            variant={activeTab === "management" ? "outline" : "ghost"}
             onClick={() => setActiveTab("management")}
           >
             Gerenciamento de Contratos
           </Button>
           <Button
-            variant={activeTab === "template" ? "default" : "outline"}
+            variant={activeTab === "template" ? "outline" : "ghost"}
             onClick={() => setActiveTab("template")}
             className="flex items-center gap-2"
           >
