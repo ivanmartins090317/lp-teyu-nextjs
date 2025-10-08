@@ -95,6 +95,14 @@ const Testimonials = () => {
       comment:
         "Encontrei todos os acessórios que precisava em um só lugar. Qualidade excelente e variedade incrível!",
       initials: "JL"
+    },
+    {
+      name: "Ricardo",
+      location: "Santos, SP",
+      service: "Teyu Guardaria",
+      rating: 5,
+      comment: "Vocês criaram uma casa em que a gente se sente abraçado 👏🏼👏🏼👏🏼",
+      initials: "R-"
     }
   ];
 
