@@ -21,7 +21,7 @@ const Contracts = () => {
           <LogoutButton />
         </div>
 
-        <div className="flex space-x-4 mb-6">
+        <div className="flex flex-col md:flex-row space-x-4 mb-6">
           <Button
             variant={activeTab === "users" ? "outline" : "ghost"}
             onClick={() => setActiveTab("users")}
