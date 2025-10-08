@@ -114,7 +114,7 @@ const HowItWorks = () => {
                 style={{animationDelay: `${index * 0.2}s`}}
               >
                 {/* Modern Card Design */}
-                <div className="bg-white rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-neutral-100 group-hover:border-neutral-200">
+                <div className="bg-white rounded-xl h-[500px] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-neutral-100 group-hover:border-neutral-200">
                   {/* Step Icon with Modern Design */}
                   <div className="relative mb-8">
                     <div
@@ -215,7 +215,7 @@ const HowItWorks = () => {
                 alt="how-it-works"
                 width={100}
                 height={100}
-                className="w-full h-auto"
+                className="w-full h-auto opacity-10"
               />
             </div>
             <div
@@ -227,19 +227,19 @@ const HowItWorks = () => {
                 alt="how-it-works"
                 width={100}
                 height={100}
-                className="w-full h-auto"
+                className="w-full h-auto opacity-10"
               />
             </div>
             <div
               className="absolute top-1/2 left-1/4 w-16 h-16 opacity-5 rounded-full animate-pulse"
-              style={{animationDelay: "2s"}}
+              style={{animationDelay: "15s"}}
             >
               <Image
                 src="/Vetorwave-icon.svg"
                 alt="how-it-works"
                 width={100}
                 height={100}
-                className="w-full h-auto"
+                className="w-full h-auto opacity-50"
               />
             </div>
           </div>
@@ -249,12 +249,12 @@ const HowItWorks = () => {
               Quer ver na prática?
             </h3>
             <p className="font-source text-neutral-100 mb-10 max-w-3xl mx-auto text-xl leading-relaxed">
-              Assista nossa demonstração de 2 minutos e veja como é fácil agendar um
-              serviço premium para sua casa.
+              Assista a demonstração de 2 minutos e sinta como é simples viver o surf com
+              mais liberdade, deixando sua prancha segura e bem cuidada na Teyu.
             </p>
             <button
               onClick={handleVideoClick}
-              className="bg-[#e3b653]/20 hover:bg-[#e3b653]-600 text-white font-source font-bold px-10 py-5 rounded-md transition-all hover:scale-105 shadow-2xl text-lg group"
+              className="border border-[#e3b653] hover:bg-[#e3b653]-600 text-white font-source font-bold px-10 py-5 rounded-md transition-all hover:scale-105 shadow-2xl text-lg group"
             >
               <span className="group-hover:scale-105 transition-transform inline-block">
                 Assistir Demonstração
