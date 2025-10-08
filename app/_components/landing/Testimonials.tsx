@@ -111,7 +111,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-playfair font-bold text-3xl md:text-4xl lg:text-5xl text-[#6a5c27] mb-6">
-            O que nossos clientes dizem
+            O que nossos <br className="block md:hidden" /> clientes dizem
           </h2>
           <p className="font-source text-lg md:text-xl text-[#5f5f5e] max-w-3xl mx-auto leading-relaxed">
             Mais de 150 surfistas já confiam na Teyu. Veja alguns depoimentos reais de
