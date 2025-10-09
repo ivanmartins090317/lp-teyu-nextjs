@@ -47,7 +47,7 @@ const Forecast = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col items-center justify-center">
             <Image
-              src="/logo_teyu_blue.svg"
+              src="/logo_blue.svg"
               alt="logo Teyu azul"
               width={500}
               height={500}
