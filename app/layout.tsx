@@ -38,35 +38,35 @@ export const metadata: Metadata = {
     description:
       "Guardaria premium para surfistas. Organize suas pranchas, tenha mais tempo para o surfe. Serviços exclusivos em Santos-SP.",
     type: "website",
-    url: "https://www.teyuguardaria.com",
-    siteName: "Teyu Guardaria",
+    url: "https://www.teyusurf.com.br",
+    siteName: "Teyu Guardaria, Prancharia e Soul Surfers",
     locale: "pt_BR",
     countryName: "Brasil",
     images: [
       {
-        url: "/metag_site_opengrafic.png",
+        url: "https://i.ibb.co/99nRDhH5/metag-site-opengrafic.png",
         width: 1200,
         height: 630,
-        alt: "Teyu Guardaria"
+        alt: "Teyu Guardaria, Prancharia e Soul Surfers"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    site: "@TeyuGuardaria",
+    site: "@teyusurf",
     title: "Teyu Guardaria | Viva a experiência completa do surfe",
     description:
       "Guardaria, organização, estilo e praticidade. Serviços premium pensados para quem valoriza qualidade e tempo.",
-    images: ["/metag_site_opengrafic.png"]
+    images: ["https://i.ibb.co/99nRDhH5/metag-site-opengrafic.png"]
   },
   other: {
     "adobe-fonts-myriad-pro": "https://use.typekit.net/deh7ypx.css",
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      name: "Teyu Guardaria",
+      name: "Teyu Guardaria, Prancharia e Soul Surfers",
       description: "Guardaria premium para surfistas",
-      url: "https://www.teyuguardaria.com"
+      url: "https://www.teyusurf.com.br"
     }),
 
     // Meta tags adicionais
