@@ -206,7 +206,7 @@ const HowItWorks = () => {
         </div>
 
         {/* Enhanced Demo Section */}
-        <div className="mt-20 bg-gradient-to-br from-[#6a5c27] via-[#5e4e3d] to-[#6a5c27] rounded-xl p-12 md:p-16 text-white text-center animate-scale-in relative overflow-hidden">
+        <div className="hidden mt-20 bg-gradient-to-br from-[#6a5c27] via-[#5e4e3d] to-[#6a5c27] rounded-xl p-12 md:p-16 text-white text-center animate-scale-in relative overflow-hidden">
           {/* Background Decorations */}
           <div className="absolute top-0 left-0 w-full h-full">
             <div className="absolute top-10 left-10 w-20 h-20 opacity-10 rounded-full animate-pulse">

@@ -4,7 +4,7 @@ import ServicesOverview from "./_components/landing/ServicesOverview";
 import HowItWorks from "./_components/landing/HowItWorks";
 import AboutTeyu from "./_components/landing/AboutTeyu";
 import Testimonials from "./_components/landing/Testimonials";
-import VideoSection from "./_components/landing/VideoSection";
+// import VideoSection from "./_components/landing/VideoSection";
 import FinalCTA from "./_components/landing/FinalCTA";
 import Footer from "./_components/shared/Footer";
 import FloatingWhatsApp from "./_components/shared/FloatingWhatsApp";
@@ -22,7 +22,7 @@ export default function Home() {
         <AboutTeyu />
         <ServicesOverview />
         <HowItWorks />
-        <VideoSection />
+        {/* <VideoSection /> */}
         <Testimonials />
         <FinalCTA />
       </div>
