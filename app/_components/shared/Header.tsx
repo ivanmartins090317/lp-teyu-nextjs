@@ -34,7 +34,7 @@ const Header = () => {
                 Teyu
               </h1>
               <span className="text-xs lg:text-sm text-neutral-600 hidden sm:block">
-                Guardaria & Prancharia
+                Guardaria | Prancharia | Soul Surfers
               </span>
             </div>
           </div>
