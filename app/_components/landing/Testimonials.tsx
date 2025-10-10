@@ -272,7 +272,7 @@ const Testimonials = () => {
             </p>
             <button
               onClick={() => openWhatsApp()}
-              className="bg-[#e3b653] hover:bg-[#6a5c27] text-[#6a5c27] hover:text-[#e5dfda] transition duration-700 font-source font-bold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-xl"
+              className="bg-[#e3b653] hover:bg-[#6a5c27] text-[#6a5c27] hover:text-[#e5dfda] transition duration-700 font-source font-bold px-8 py-4 rounded-lg hover:scale-105 shadow-xl"
             >
               Vamos conversar?
             </button>
