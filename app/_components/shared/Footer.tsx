@@ -16,7 +16,7 @@ const Footer = () => {
               {/* <div className="w-10 h-10  rounded-lg flex items-center justify-center"></div> */}
               <div className="w-10 h-10 lg:w-12 lg:h-12">
                 <Image
-                  src="/favico_teyu_white.png"
+                  src="/logo_footer.png"
                   alt="logo"
                   width={40}
                   height={40}
@@ -24,7 +24,9 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <span className="text-xs text-white">Guardaria & Prancharia</span>
+                <span className="text-xs text-white">
+                  Guardaria, Prancharia e Soul Surfers
+                </span>
               </div>
               <div></div>
             </div>
@@ -151,6 +153,11 @@ const Footer = () => {
                   Depoimentos
                 </a>
               </li>
+              <li>
+                <a href="/forecast" className="hover:text-gold transition-colors">
+                  Previsão
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -195,7 +202,8 @@ const Footer = () => {
         <div className="border-t border-white/20 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="font-source text-neutral-300 text-sm">
-              © {currentYear} Teyu | Guardaria & Prancharia. Todos os direitos reservados.
+              © {currentYear} <span className="font-bold">Teyu</span> Guardaria,
+              Prancharia e Soul Surfers. Todos os direitos reservados.
             </div>
             <div className="flex space-x-6 font-source text-sm text-neutral-300">
               <a href="/privacy" className="hover:text-gold transition-colors">
