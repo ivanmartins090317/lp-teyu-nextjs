@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     countryName: "Brasil",
     images: [
       {
-        url: "https://i.ibb.co/99nRDhH5/metag-site-opengrafic.png",
+        url: "https://i.ibb.co/gFHF2TKy/meta-tag.png",
         width: 1200,
         height: 630,
         alt: "Teyu Guardaria, Prancharia e Soul Surfers"
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "Teyu Guardaria | Viva a experiência completa do surfe",
     description:
       "Guardaria, organização, estilo e praticidade. Serviços premium pensados para quem valoriza qualidade e tempo.",
-    images: ["https://i.ibb.co/99nRDhH5/metag-site-opengrafic.png"]
+    images: ["https://i.ibb.co/gFHF2TKy/meta-tag.png"]
   },
   other: {
     "adobe-fonts-myriad-pro": "https://use.typekit.net/deh7ypx.css",
@@ -73,7 +73,11 @@ export const metadata: Metadata = {
     "theme-color": "#1e40af",
     "msapplication-TileColor": "#1e40af",
     "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "default"
+    "apple-mobile-web-app-status-bar-style": "default",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:type": "image/png",
+    "og:image:secure_url": "https://i.ibb.co/gFHF2TKy/meta-tag.png"
   }
 };
 
