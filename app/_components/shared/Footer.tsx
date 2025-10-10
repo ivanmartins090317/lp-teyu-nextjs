@@ -183,9 +183,9 @@ const Footer = () => {
                 Horário de Atendimento:
               </div>
               <div className="font-source text-sm text-neutral-300">
-                <div>Segunda - Sexta: 7h às 22h</div>
-                <div>Sábados: 8h às 18h</div>
-                <div>Domingos: 9h às 17h</div>
+                <div>Segunda - Sexta: 10h às 17h</div>
+                <div>Sábados: 8h às 12h</div>
+                <div>Domingos: 8h às 12h</div>
               </div>
             </div>
           </div>
