@@ -57,7 +57,7 @@ const HeroSection = () => {
                   animate={{opacity: 1, scale: 1}}
                   transition={{duration: 0.4, delay: 0.5}}
                   onClick={handleOpenModal}
-                  className=" text-sm  bg-[#e3b653] hover:bg-[#e3b653]/20 hover:text-[#e5dfda] text-[#5e4e3d] font-source font-semibold px-10 py-4 rounded-lg  transition-all hover:scale-105 shadow-xl"
+                  className=" text-sm bg-[#e3b653] hover:bg-[#e3b653]/20 hover:text-[#e5dfda] text-[#5e4e3d] transition duration-700 font-source font-semibold px-10 py-4 rounded-lg  transition-all hover:scale-105 shadow-xl"
                 >
                   Experiência completa
                   <ArrowRight className="w-5 h-5 ml-2" />

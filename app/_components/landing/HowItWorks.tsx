@@ -254,7 +254,7 @@ const HowItWorks = () => {
             </p>
             <button
               onClick={handleVideoClick}
-              className="border border-[#e3b653] hover:bg-[#e3b653]-600 text-white font-source font-bold px-10 py-5 rounded-md transition-all hover:scale-105 shadow-2xl text-lg group"
+              className="border border-[#e3b653] hover:bg-[#e3b653]-600 transition duration-700 text-white font-source font-bold px-10 py-5 rounded-md transition-all hover:scale-105 shadow-2xl text-lg group"
             >
               <span className="group-hover:scale-105 transition-transform inline-block">
                 Assistir Demonstração

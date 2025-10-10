@@ -71,13 +71,13 @@ const FinalCTA = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handleOpenModal}
-                className="bg-[#e3b653] hover:bg-[#6a5c27]/70 text-[#6a5c27  ] hover:text-[#e5dfda] font-source font-bold px-12 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-2xl hover:shadow-gold/20"
+                className="bg-[#e3b653] hover:bg-[#6a5c27]/70 text-[#6a5c27] hover:text-[#e5dfda] transition duration-700 font-source font-bold px-12 py-4 rounded-lg text-lg transition-all hover:scale-105 shadow-2xl hover:shadow-gold/20"
               >
                 Criar Minha Conta Grátis
               </button>
               <button
                 onClick={() => openWhatsApp()}
-                className="border-1 border-[#6a5c27] text-[#6a5c27] hover:bg-[#6a5c27]/20 hover:text-[#6a5c27] font-source font-semibold px-12 py-4 rounded-lg text-lg transition-all"
+                className="border-1 border-[#6a5c27] text-[#6a5c27] hover:shadow-lg shadow-[#6a5c27]/20 hover:text-[#6a5c27] transition duration-700 font-source font-semibold px-12 py-4 rounded-lg text-lg"
               >
                 Falar com Especialista
               </button>

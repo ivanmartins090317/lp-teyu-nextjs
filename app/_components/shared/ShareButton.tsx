@@ -28,7 +28,7 @@ export function ShareButton() {
       onClick={handleShare}
       variant="outline"
       size="sm"
-      className="gap-2 text-[#6a5c27] hover:text-[#6a5c27]/20 transition-colors font-source font-medium text-sm xl:text-base relative group"
+      className="gap-2 text-[#6a5c27] hover:shadow-lg shadow-[#6a5c27] transition duration-700 font-source font-medium text-sm xl:text-base relative group"
     >
       <Share2 size={16} />
       Compartilhar
