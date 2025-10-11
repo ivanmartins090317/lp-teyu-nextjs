@@ -18,9 +18,11 @@ const Header = () => {
               <Image
                 src="/logo_header.png"
                 alt="logo"
-                width={40}
-                height={40}
+                width={48}
+                height={48}
+                priority={true}
                 className="w-full h-auto"
+                sizes="(max-width: 768px) 40px, 48px"
               />
             </div>
           </div>

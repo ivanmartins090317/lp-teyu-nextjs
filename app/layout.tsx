@@ -2,24 +2,35 @@ import type {Metadata} from "next";
 import {Open_Sans, Source_Sans_3, Libre_Baskerville} from "next/font/google";
 import "./globals.css";
 import {AuthProvider} from "./_contexts/AuthContext";
+import PerformanceProvider from "./_components/shared/PerformanceProvider";
 
+// Otimização de fontes com display: swap e preload
 const libreBaskerville = Libre_Baskerville({
   variable: "--font-libre-baskerville",
   subsets: ["latin"],
   weight: ["400", "700"],
-  style: ["normal", "italic"]
+  style: ["normal", "italic"],
+  display: "swap",
+  preload: true,
+  fallback: ["serif"]
 });
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"]
+  weight: ["400", "600", "700"], // Removido peso 300 para reduzir bundle
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"]
 });
 
 const sourceSans3 = Source_Sans_3({
   variable: "--font-source-sans-3",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"]
+  weight: ["400", "600", "700"], // Removido peso 300 para reduzir bundle
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"]
 });
 
 export const metadata: Metadata = {
@@ -60,7 +71,7 @@ export const metadata: Metadata = {
     images: ["https://i.ibb.co/gFHF2TKy/meta-tag.png"]
   },
   other: {
-    "adobe-fonts-myriad-pro": "https://use.typekit.net/deh7ypx.css",
+    // Removido Adobe Fonts para melhorar performance
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -92,7 +103,9 @@ export default function RootLayout({
         className={`${openSans.variable} ${sourceSans3.variable} ${libreBaskerville.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        <AuthProvider>{children}</AuthProvider>
+        <PerformanceProvider>
+          <AuthProvider>{children}</AuthProvider>
+        </PerformanceProvider>
       </body>
     </html>
   );
