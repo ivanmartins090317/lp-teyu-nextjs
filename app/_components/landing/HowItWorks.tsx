@@ -2,14 +2,8 @@
 
 import React, {useRef} from "react";
 import {Smartphone, Calendar, UserCheck, Star} from "lucide-react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
-
-// Importação dinâmica do framer-motion para evitar erro de client boundary
-const MotionDiv = dynamic(() => import("framer-motion").then((mod) => mod.motion.div), {
-  ssr: false,
-  loading: () => <div className="flex gap-4 whitespace-nowrap" />
-});
+import {motion} from "framer-motion";
 
 const HowItWorks = () => {
   // Criar referência para a seção de vídeo
@@ -118,7 +112,7 @@ const HowItWorks = () => {
                   {/* Step Icon with Modern Design */}
                   <div className="relative mb-8">
                     <div
-                      className={`w-32 h-32 mx-auto rounded-full bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-2xl ${step.shadowColor} group-hover:scale-110 transition-transform duration-500 relative overflow-hidden`}
+                      className={`border w-25 h-25 lg:h-32 mx-auto rounded-full bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-2xl ${step.shadowColor} group-hover:scale-110 transition-transform duration-500 relative overflow-hidden`}
                     >
                       <div className="absolute inset-0 bg-white opacity-20 rounded-full"></div>
                       <step.icon className="w-12 h-12 text-[#6a5c27] relative z-10" />
@@ -174,7 +168,7 @@ const HowItWorks = () => {
 
           {/* Scrolling container */}
           <div className="overflow-hidden pb-5">
-            <MotionDiv
+            <motion.div
               className="flex gap-6 whitespace-nowrap"
               animate={{
                 x: [0, -100 * stats.length + "%"]
@@ -183,7 +177,7 @@ const HowItWorks = () => {
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 20, // Velocidade suave - 15 segundos para completar um ciclo
+                  duration: 20,
                   ease: "linear"
                 }
               }}
@@ -201,7 +195,7 @@ const HowItWorks = () => {
                   </div>
                 </div>
               ))}
-            </MotionDiv>
+            </motion.div>
           </div>
         </div>
 

@@ -135,7 +135,7 @@ const Testimonials = () => {
                   key={index}
                   className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 pb-[3%]"
                 >
-                  <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg h-full">
+                  <Card className="w-[95%] m-auto md:w-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg h-full">
                     <CardContent className="p-6 space-y-4 flex flex-col h-full">
                       {/* Quote Icon & Rating */}
                       <div className="flex justify-between items-start">
@@ -191,6 +191,7 @@ const Testimonials = () => {
             variant="ghost"
             size="icon"
             onClick={scrollPrev}
+            ria-label="Depoimento anterior"
             className="h-12 w-12 rounded-full border-2 border-[#5f5f5e]/10 hover:border-[#5f5f5e] hover:bg-[#5f5f5e]/20 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg group"
           >
             <ChevronLeft className="h-5 w-5 transition-transform group-hover:-translate-x-0.5 text-[#5f5f5e] hover:bg-white" />
@@ -201,6 +202,7 @@ const Testimonials = () => {
             {Array.from({length: count}).map((_, index) => (
               <button
                 key={index}
+                aria-label={`Ir para depoimento ${index + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index + 1 === current
                     ? "w-8 bg-[#5f5f5e] shadow-md"
@@ -216,6 +218,7 @@ const Testimonials = () => {
             variant="ghost"
             size="icon"
             onClick={scrollNext}
+            aria-label="Próximo depoimento"
             className="h-12 w-12 rounded-full border-2 border-[#5f5f5e]/10 hover:border-[#5f5f5e] hover:bg-[#5f5f5e]/20 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg group"
           >
             <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 text-[#5f5f5e] hover:text-white" />

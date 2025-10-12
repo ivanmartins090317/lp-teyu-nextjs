@@ -1,6 +1,5 @@
 "use client";
 
-import {motion} from "framer-motion";
 import Image from "next/image";
 
 export default function AboutUs() {
@@ -11,32 +10,14 @@ export default function AboutUs() {
         <div className="max-w-6xl mx-auto">
           <div className="flex lg:flex-row flex-col gap-8 lg:gap-10 items-center">
             {/* Conteúdo Principal */}
-            <motion.div
-              initial={{opacity: 0, x: -50}}
-              whileInView={{opacity: 1, x: 0}}
-              transition={{duration: 0.8, ease: "easeOut"}}
-              viewport={{once: true}}
-              className="flex-1 lg:pr-8"
-            >
+            <div className="flex-1 lg:pr-8 animate-initial-right-soft animate-slide-in-from-right-soft">
               {/* Título */}
-              <motion.h2
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.6, delay: 0.2}}
-                viewport={{once: true}}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6a5c27] mb-6 font-source leading-tight"
-              >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6a5c27] mb-6 font-source leading-tight animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-200">
                 Sobre nós
-              </motion.h2>
+              </h2>
 
               {/* Texto Principal */}
-              <motion.div
-                initial={{opacity: 0, y: 30}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.6, delay: 0.4}}
-                viewport={{once: true}}
-                className="space-y-4 text-gray-700 leading-relaxed"
-              >
+              <div className="space-y-4 text-gray-700 leading-relaxed animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-400">
                 <p className="text-base md:text-lg text-[#6a5c27]">
                   Guilherme Penteado Campos Filho, ou Gui, começou a surfar nos anos 70 no
                   Guarujá, mas foi em 2006, após um tempo afastado das ondas, que ele
@@ -61,76 +42,44 @@ export default function AboutUs() {
                   muito mais que simples ondas, mas um estilo de vida que une família,
                   amigos e a busca constante pelo equilíbrio e pela paz.
                 </p>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
             {/* Seção de Imagens */}
-            <motion.div
-              initial={{opacity: 0, x: 50}}
-              whileInView={{opacity: 1, x: 0}}
-              transition={{duration: 0.8, ease: "easeOut", delay: 0.3}}
-              viewport={{once: true}}
-              className="flex-1 relative"
-            >
+            <div className="flex-1 relative animate-initial-right animate-slide-in-from-right animate-delay-300">
               <div className="grid grid-cols-1 md:grid-cols-1 gap-6 lg:gap-8">
                 {/* Primeira imagem */}
-                <motion.div
-                  initial={{opacity: 0, y: 30}}
-                  whileInView={{opacity: 1, y: 0}}
-                  transition={{duration: 0.6, delay: 0.5}}
-                  viewport={{once: true}}
-                  className="relative group"
-                >
+                <div className="relative group z-20 animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-500">
                   <div className="md:w-[100%] absolute overflow-hidden rounded-2xl shadow-x z-10 right-4">
                     <Image
-                      src="/imagem_sobre_nos_02.png"
+                      src="/imagem_sobre_nos_02_.webp"
                       alt="Nossa equipe - Foto 1"
                       width={1000}
                       height={500}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
                       className="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Segunda imagem */}
-                <motion.div
-                  initial={{opacity: 0, y: 30}}
-                  whileInView={{opacity: 1, y: 0}}
-                  transition={{duration: 0.6, delay: 0.7}}
-                  viewport={{once: true}}
-                  className="relative group md:mt-8"
-                >
-                  <div className="relative overflow-hidden rounded-2xl shadow-xl ml-10">
+                <div className="relative group md:mt-8 animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-700">
+                  <div className="relative overflow-hidden rounded-2xl shadow-xl ml-10 z-0">
                     <Image
                       src="/pele_teyu_verdemusgo.svg"
                       alt="textura pele teyu"
                       width={400}
                       height={500}
+                      loading="lazy"
                       className="w-full h-[300px] md:h-[400px] lg:h-[450px] lg:max-w-[100%] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="relative inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                </motion.div>
+                </div>
               </div>
-
-              {/* Elemento decorativo de fundo */}
-              <motion.div
-                initial={{opacity: 0, scale: 0.8}}
-                whileInView={{opacity: 1, scale: 1}}
-                transition={{duration: 1, delay: 0.8}}
-                viewport={{once: true}}
-                className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-200 to-orange-100 rounded-full opacity-30 -z-10 hidden lg:block"
-              />
-
-              <motion.div
-                initial={{opacity: 0, scale: 0.8}}
-                whileInView={{opacity: 1, scale: 1}}
-                transition={{duration: 1, delay: 1}}
-                viewport={{once: true}}
-                className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-blue-200 to-blue-100 rounded-full opacity-40 -z-10 hidden lg:block"
-              />
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

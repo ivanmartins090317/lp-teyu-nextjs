@@ -1,111 +1,81 @@
 "use client";
 
 import {CheckCircle} from "lucide-react";
-// import {motion} from "framer-motion";
-import dynamic from "next/dynamic";
+import {CSSProperties} from "react";
 
-const BenefitsScrolling = () => {
-  // Importação dinâmica do framer-motion para evitar erro de client boundary
-  const MotionDiv = dynamic(() => import("framer-motion").then((mod) => mod.motion.div), {
-    ssr: false,
-    loading: () => <div className="flex gap-4 whitespace-nowrap" />
-  });
+// Tipo que permite CSS custom properties (variáveis --*)
+type CSSPropertiesWithVars = CSSProperties & {
+  [key: `--${string}`]: string | number;
+};
 
-  // Benefits data
+function BenefitsScrolling() {
+  // Conteúdo exibido como "marquee". CSS de animação está em app/globals.css
   const benefits = [
     "Pranchas seguras e prontas sempre que precisar",
     "Reparos e manutenção express",
     "Espaço confortável com café e loja exclusiva"
   ];
 
-  // Create duplicated benefits for infinite scroll
-  const duplicatedBenefits = [...benefits, ...benefits];
-  const quadriplicatedBenefits = [
-    ...benefits,
-    ...benefits,
-    ...benefits,
-    ...benefits,
-    ...benefits,
-    ...benefits,
-    ...benefits,
-    ...benefits
-  ];
+  const loopShort = [...benefits, ...benefits];
+  const loopLong = [...benefits, ...benefits, ...benefits, ...benefits];
+
+  function renderChip(text: string, index: number, size: "sm" | "md") {
+    const sizeClasses = size === "sm" ? "px-4 py-2 text-sm" : "px-5 py-2.5 text-base";
+
+    return (
+      <div
+        key={`${text}-${index}`}
+        className={`flex items-center gap-2 bg-[#e5dfda]/10 text-[#e5dfda] rounded-full flex-shrink-0 ${sizeClasses}`}
+      >
+        <CheckCircle className={size === "sm" ? "h-4 w-4" : "h-5 w-5"} />
+        <span className="font-source whitespace-nowrap">{text}</span>
+      </div>
+    );
+  }
 
   return (
     <>
-      {/* Mobile Version - Infinite Scroll */}
-      <div className="md:hidden relative overflow-hidden mb-0 bg-[#6a5c27]/80 p-8">
-        {/* Blur overlays   */}
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-r from-[#6a5c27] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-l from-[#6a5c27] to-transparent z-10 pointer-events-none"></div>
+      {/* Mobile - uma faixa */}
+      <div className="md:hidden relative bg-[#6a5c27]/80 py-6">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-[#6a5c27] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-r from-[#6a5c27] to-transparent" />
 
-        {/* Scrolling container */}
-        <div className="overflow-hidden">
-          <MotionDiv
-            className="flex gap-4 whitespace-nowrap"
-            animate={{
-              x: [0, -100 * benefits.length + "%"]
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 40, // Velocidade suave - 20 segundos para completar um ciclo
-                ease: "linear"
-              }
-            }}
+        <div className="marquee" aria-label="Benefícios Teyu">
+          <div
+            className="marquee__inner"
+            style={{"--duration": "20s"} as CSSPropertiesWithVars}
           >
-            {duplicatedBenefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex items-center space-x-2 bg-[#e5dfda]/10 px-4 py-2 rounded-full flex-shrink-0"
-              >
-                <CheckCircle className="w-5 h-5 text-[#e5dfda]" />
-                <span className="font-source text-sm text-[#e5dfda] whitespace-nowrap">
-                  {benefit}
-                </span>
-              </div>
-            ))}
-          </MotionDiv>
+            {loopShort.map((text, idx) => renderChip(text, idx, "sm"))}
+          </div>
         </div>
       </div>
-      {/* Desktop Version */}
-      <div className="hidden md:flex relative overflow-hidden bg-[#6a5c27]/80 p-16 ">
-        {/* Blur overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-38 bg-gradient-to-r from-[#6a5c27] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-38 bg-gradient-to-l from-[#6a5c27] to-transparent z-10 pointer-events-none"></div>
-        {/* Scrolling container */}
-        <div className="overflow-hidden">
-          <MotionDiv
-            className="flex gap-4 whitespace-nowrap"
-            animate={{
-              x: [0, -100 * benefits.length + "%"]
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 120, // Velocidade suave - 20 segundos para completar um ciclo
-                ease: "linear"
-              }
-            }}
-          >
-            {quadriplicatedBenefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex items-center space-x-2 bg-[#e5dfda]/10 px-4 py-2 rounded-full flex-shrink-0"
-              >
-                <CheckCircle className="w-5 h-5 text-[#e5dfda]" />
-                <span className="font-source text-sm text-[#e5dfda] whitespace-nowrap">
-                  {benefit}
-                </span>
-              </div>
-            ))}
-          </MotionDiv>
+
+      {/* Desktop - duas faixas contra-animadas */}
+      <div className="hidden md:block relative bg-[#6a5c27]/80 py-10">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#6a5c27] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#6a5c27] to-transparent" />
+
+        <div className="space-y-4">
+          <div className="marquee" aria-hidden="true">
+            <div
+              className="marquee__inner"
+              style={{"--duration": "55s"} as CSSPropertiesWithVars}
+            >
+              {loopLong.map((text, idx) => renderChip(text, idx, "md"))}
+            </div>
+          </div>
+          {/* <div className="marquee marquee--reverse" aria-hidden="true">
+            <div
+              className="marquee__inner"
+              style={{"--duration": "65s"} as CSSPropertiesWithVars}
+            >
+              {loopLong.map((text, idx) => renderChip(text, idx, "md"))}
+            </div>
+          </div> */}
         </div>
       </div>
     </>
   );
-};
+}
 
 export default BenefitsScrolling;
