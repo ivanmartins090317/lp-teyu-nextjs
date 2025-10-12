@@ -1,32 +1,49 @@
+"use client";
+
 import Header from "./_components/shared/Header";
 import HeroSection from "./_components/landing/HeroSection";
-// import ServicesOverview from "./_components/landing/ServicesOverview";
-import HowItWorks from "./_components/landing/HowItWorks";
-// import AboutTeyu from "./_components/landing/AboutTeyu";
-// import Testimonials from "./_components/landing/Testimonials";
-// import VideoSection from "./_components/landing/VideoSection";
-import FinalCTA from "./_components/landing/FinalCTA";
-import Footer from "./_components/shared/Footer";
-import FloatingWhatsApp from "./_components/shared/FloatingWhatsApp";
-// import AboutUs from "./_components/landing/AboutUs";
-import BenefitsScrolling from "./_components/landing/benefitsScrolling";
+import LoadingSkeleton from "./_components/shared/LoadingSkeleton";
 import dynamic from "next/dynamic";
 
-const AboutUs = dynamic(() => import("./_components/landing/AboutUs"), {
-  loading: () => <div className="py-16 md:py-24 bg-[#e5dfda] min-h-[400px]" />
+// Lazy loading para componentes pesados com loading otimizado
+const ServicesOverview = dynamic(() => import("./_components/landing/ServicesOverview"), {
+  loading: () => <LoadingSkeleton height="h-96" />
+});
+
+const HowItWorks = dynamic(() => import("./_components/landing/HowItWorks"), {
+  loading: () => <LoadingSkeleton height="h-[600px]" />
 });
 
 const AboutTeyu = dynamic(() => import("./_components/landing/AboutTeyu"), {
-  loading: () => <div className="pb-16 md:py-16 bg-[#6a5c27] min-h-[400px]" />
-});
-
-const ServicesOverview = dynamic(() => import("./_components/landing/ServicesOverview"), {
-  loading: () => <div className="py-16 md:py-24 min-h-[400px]" />
+  loading: () => <LoadingSkeleton height="h-96" />
 });
 
 const Testimonials = dynamic(() => import("./_components/landing/Testimonials"), {
-  loading: () => <div className="py-16 md:py-24 bg-[#e5dfda] min-h-[400px]" />
+  loading: () => <LoadingSkeleton height="h-96" />
 });
+
+const FinalCTA = dynamic(() => import("./_components/landing/FinalCTA"), {
+  loading: () => <LoadingSkeleton height="h-96" />
+});
+
+const Footer = dynamic(() => import("./_components/shared/Footer"), {
+  loading: () => <LoadingSkeleton height="h-32" />
+});
+
+const FloatingWhatsApp = dynamic(() => import("./_components/shared/FloatingWhatsApp"), {
+  ssr: false // Não renderizar no servidor
+});
+
+const AboutUs = dynamic(() => import("./_components/landing/AboutUs"), {
+  loading: () => <LoadingSkeleton height="h-96" />
+});
+
+const BenefitsScrolling = dynamic(
+  () => import("./_components/landing/benefitsScrolling"),
+  {
+    loading: () => <LoadingSkeleton height="h-96" />
+  }
+);
 
 export default function Home() {
   return (
