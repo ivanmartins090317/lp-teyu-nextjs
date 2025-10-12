@@ -142,3 +142,82 @@ body {
 .animate-delay-1800 {
   animation-delay: 1.8s;
 }
+
+/* Animações para scroll infinito */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.animate-scroll-slow {
+  animation: scroll-slow 60s linear infinite;
+}
+
+/* Marquee refinado: duas faixas, pausa no hover e respeito a reduced-motion */
+.marquee {
+  overflow: hidden;
+}
+.marquee__inner {
+  display: inline-flex;
+  gap: 1rem;
+  white-space: nowrap;
+  animation: marquee var(--duration, 45s) linear infinite;
+  will-change: transform;
+}
+.marquee--reverse .marquee__inner {
+  animation-name: marquee-reverse;
+}
+.marquee:hover .marquee__inner {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__inner {
+    animation: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
