@@ -2,7 +2,6 @@ import type {Metadata} from "next";
 import {Open_Sans, Source_Sans_3, Libre_Baskerville} from "next/font/google";
 import "./globals.css";
 import {AuthProvider} from "./_contexts/AuthContext";
-import PerformanceProvider from "./_components/shared/PerformanceProvider";
 
 // Otimização de fontes com display: swap e preload
 const libreBaskerville = Libre_Baskerville({
@@ -103,9 +102,7 @@ export default function RootLayout({
         className={`${openSans.variable} ${sourceSans3.variable} ${libreBaskerville.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        <PerformanceProvider>
-          <AuthProvider>{children}</AuthProvider>
-        </PerformanceProvider>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
