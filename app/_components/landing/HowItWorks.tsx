@@ -3,11 +3,12 @@
 import React, {useRef} from "react";
 import {Smartphone, Calendar, UserCheck, Star} from "lucide-react";
 import Image from "next/image";
-import {motion} from "framer-motion";
 
 const HowItWorks = () => {
   // Criar referência para a seção de vídeo
   const videoSectionRef = useRef<HTMLElement>(null);
+
+  const SHOW_VIDEO_SECTION = false; // TODO: Ativar quando tiver vídeo do cliente
 
   // Função usando useRef
   const handleVideoClick = () => {
@@ -75,7 +76,7 @@ const HowItWorks = () => {
   ];
 
   // Create duplicated stats for infinite scroll
-  const duplicatedStats = [...stats, ...stats];
+  const duplicatedStats = [...stats, ...stats, ...stats, ...stats];
 
   return (
     <section
@@ -167,20 +168,10 @@ const HowItWorks = () => {
           <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-neutral-50 to-transparent z-10 pointer-events-none"></div>
 
           {/* Scrolling container */}
-          <div className="overflow-hidden pb-5">
-            <motion.div
-              className="flex gap-6 whitespace-nowrap"
-              animate={{
-                x: [0, -100 * stats.length + "%"]
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 20,
-                  ease: "linear"
-                }
-              }}
+          <div className="marquee pb-5">
+            <div
+              className="marquee__inner"
+              style={{"--duration": "20s"} as React.CSSProperties}
             >
               {duplicatedStats.map((stat, index) => (
                 <div
@@ -195,67 +186,72 @@ const HowItWorks = () => {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
 
         {/* Enhanced Demo Section */}
-        <div className="hidden mt-20 bg-gradient-to-br from-[#6a5c27] via-[#5e4e3d] to-[#6a5c27] rounded-xl p-12 md:p-16 text-white text-center animate-scale-in relative overflow-hidden">
-          {/* Background Decorations */}
-          <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute top-10 left-10 w-20 h-20 opacity-10 rounded-full animate-pulse">
-              <Image
-                src="/Vectorcoconut_01.svg"
-                alt="how-it-works"
-                width={100}
-                height={100}
-                className="w-full h-auto opacity-10"
-              />
+        {SHOW_VIDEO_SECTION && (
+          <div className="mt-20 bg-gradient-to-br from-[#6a5c27] via-[#5e4e3d] to-[#6a5c27] rounded-xl p-12 md:p-16 text-white text-center animate-scale-in relative overflow-hidden">
+            {/* Background Decorations */}
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="absolute top-10 left-10 w-20 h-20 opacity-10 rounded-full animate-pulse">
+                <Image
+                  src="/Vectorcoconut_01.svg"
+                  alt="how-it-works"
+                  width={100}
+                  height={100}
+                  loading="lazy"
+                  className="w-full h-auto opacity-10"
+                />
+              </div>
+              <div
+                className="absolute bottom-10 right-10 w-32 h-32  opacity-5 rounded-full animate-pulse"
+                style={{animationDelay: "1s"}}
+              >
+                <Image
+                  src="/Vectorconcha_icon.svg"
+                  alt="how-it-works"
+                  width={100}
+                  height={100}
+                  loading="lazy"
+                  className="w-full h-auto opacity-10"
+                />
+              </div>
+              <div
+                className="absolute top-1/2 left-1/4 w-16 h-16 opacity-5 rounded-full animate-pulse"
+                style={{animationDelay: "15s"}}
+              >
+                <Image
+                  src="/Vetorwave-icon.svg"
+                  alt="how-it-works"
+                  width={100}
+                  height={100}
+                  loading="lazy"
+                  className="w-full h-auto opacity-50"
+                />
+              </div>
             </div>
-            <div
-              className="absolute bottom-10 right-10 w-32 h-32  opacity-5 rounded-full animate-pulse"
-              style={{animationDelay: "1s"}}
-            >
-              <Image
-                src="/Vectorconcha_icon.svg"
-                alt="how-it-works"
-                width={100}
-                height={100}
-                className="w-full h-auto opacity-10"
-              />
-            </div>
-            <div
-              className="absolute top-1/2 left-1/4 w-16 h-16 opacity-5 rounded-full animate-pulse"
-              style={{animationDelay: "15s"}}
-            >
-              <Image
-                src="/Vetorwave-icon.svg"
-                alt="how-it-works"
-                width={100}
-                height={100}
-                className="w-full h-auto opacity-50"
-              />
-            </div>
-          </div>
 
-          <div className="relative z-10">
-            <h3 className="font-open-sans font-bold text-3xl md:text-4xl mb-6">
-              Quer ver na prática?
-            </h3>
-            <p className="font-source text-neutral-100 mb-10 max-w-3xl mx-auto text-xl leading-relaxed">
-              Assista a demonstração de 2 minutos e sinta como é simples viver o surf com
-              mais liberdade, deixando sua prancha segura e bem cuidada na Teyu.
-            </p>
-            <button
-              onClick={handleVideoClick}
-              className="border border-[#e3b653] hover:bg-[#e3b653]-600 transition duration-700 text-white font-source font-bold px-10 py-5 rounded-md hover:scale-105 shadow-2xl text-lg group"
-            >
-              <span className="group-hover:scale-105 transition-transform inline-block">
-                Assistir Demonstração
-              </span>
-            </button>
+            <div className="relative z-10">
+              <h3 className="font-open-sans font-bold text-3xl md:text-4xl mb-6">
+                Quer ver na prática?
+              </h3>
+              <p className="font-source text-neutral-100 mb-10 max-w-3xl mx-auto text-xl leading-relaxed">
+                Assista a demonstração de 2 minutos e sinta como é simples viver o surf
+                com mais liberdade, deixando sua prancha segura e bem cuidada na Teyu.
+              </p>
+              <button
+                onClick={handleVideoClick}
+                className="border border-[#e3b653] hover:bg-[#e3b653]-600 transition duration-700 text-white font-source font-bold px-10 py-5 rounded-md hover:scale-105 shadow-2xl text-lg group"
+              >
+                <span className="group-hover:scale-105 transition-transform inline-block">
+                  Assistir Demonstração
+                </span>
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

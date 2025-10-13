@@ -71,36 +71,6 @@ const ValueProposition = () => {
             </Card>
           ))}
         </div>
-
-        {/* Stats Section */}
-        <div className="mt-20 bg-[#71A2C1] rounded-xl p-8 md:p-12 text-[#ffffff] animate-fade-in">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="font-open-sans font-bold text-3xl md:text-4xl text-[#e3b653]">
-                150+
-              </div>
-              <div className="font-source text-[#ffffff]">Clientes Atendidos</div>
-            </div>
-            <div className="space-y-2">
-              <div className="font-open-sans font-bold text-3xl md:text-4xl text-[#e3b653]">
-                15+
-              </div>
-              <div className="font-source text-[#ffffff]">Tipos de Serviços</div>
-            </div>
-            <div className="space-y-2">
-              <div className="font-open-sans font-bold text-3xl md:text-4xl text-[#e3b653]">
-                4.9★
-              </div>
-              <div className="font-source text-[#ffffff]">Avaliação Média</div>
-            </div>
-            <div className="space-y-2">
-              <div className="font-open-sans font-bold text-3xl md:text-4xl text-[#e3b653]">
-                98%
-              </div>
-              <div className="font-source text-[#ffffff]">Satisfação</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

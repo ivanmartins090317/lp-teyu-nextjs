@@ -9,12 +9,10 @@ const FinalCTA = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
-    console.log("Abrindo modal...");
     setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
-    console.log("Fechando modal...");
     setIsModalOpen(false);
   };
 

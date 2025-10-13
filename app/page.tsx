@@ -3,10 +3,17 @@
 import dynamic from "next/dynamic";
 import Header from "./_components/shared/Header";
 import HeroSection from "./_components/landing/HeroSection";
-import BenefitsScrolling from "./_components/landing/benefitsScrolling";
-import FloatingWhatsApp from "./_components/shared/FloatingWhatsApp";
 
 // Lazy loading dos componentes abaixo do fold
+const BenefitsScrolling = dynamic(
+  () => import("./_components/landing/benefitsScrolling"),
+  {
+    loading: () => <div className="bg-[#6a5c27]/80 py-6 md:py-10 min-h-[100px]" />
+  }
+);
+const ValueProposition = dynamic(() => import("./_components/landing/ValueProposition"), {
+  loading: () => <div className="py-16 md:py-24 bg-[#FAFAFA] min-h-[400px]" />
+});
 const AboutUs = dynamic(() => import("./_components/landing/AboutUs"), {
   loading: () => <div className="py-16 md:py-24 bg-[#e5dfda] min-h-[400px]" />
 });
@@ -34,6 +41,10 @@ const FinalCTA = dynamic(() => import("./_components/landing/FinalCTA"), {
 const Footer = dynamic(() => import("./_components/shared/Footer"), {
   loading: () => <div className="bg-[#6a5c27] min-h-[200px]" />
 });
+const FloatingWhatsApp = dynamic(() => import("./_components/shared/FloatingWhatsApp"), {
+  ssr: false,
+  loading: () => null
+});
 
 export default function Home() {
   return (
@@ -42,6 +53,7 @@ export default function Home() {
       <div className="flex flex-col">
         <HeroSection />
         <BenefitsScrolling />
+        <ValueProposition />
         <AboutUs />
         <AboutTeyu />
         <ServicesOverview />

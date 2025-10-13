@@ -38,7 +38,7 @@ function BenefitsScrolling() {
       {/* Mobile - uma faixa */}
       <div className="md:hidden relative bg-[#6a5c27]/80 py-6">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-[#6a5c27] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-r from-[#6a5c27] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-[#6a5c27] to-transparent" />
 
         <div className="marquee" aria-label="Benefícios Teyu">
           <div

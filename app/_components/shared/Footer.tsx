@@ -16,10 +16,12 @@ const Footer = () => {
               {/* <div className="w-10 h-10  rounded-lg flex items-center justify-center"></div> */}
               <div className="w-10 h-10 lg:w-12 lg:h-12">
                 <Image
-                  src="/logo_footer.png"
-                  alt="logo"
+                  src="/logo_footer_.webp"
+                  alt="Logo Teyu Footer"
                   width={40}
                   height={40}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 40px, 48px"
                   className="w-full h-auto"
                 />
               </div>
