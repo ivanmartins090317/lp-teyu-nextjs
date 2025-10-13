@@ -21,7 +21,7 @@ const HeroSection = () => {
             <div className="space-y-6">
               <div className="w-full flex justify-center p-0 m-0 mt-20 md:mt-15 2xl:mt-18 lg:mt-15">
                 <Image
-                  src="/logo_teyu_hero.svg"
+                  src="/logo_teyu_hero_.svg"
                   width={400}
                   height={400}
                   alt="Logo hero Teyu"
