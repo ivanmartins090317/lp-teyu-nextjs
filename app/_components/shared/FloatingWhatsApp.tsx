@@ -5,14 +5,6 @@ import {MessageCircle} from "lucide-react";
 import {useWhatsApp} from "@/app/_hooks/useWhatsApp";
 
 const FloatingWhatsApp = () => {
-  // const handleWhatsAppClick = () => {
-  //   const phoneNumber = "5511999999999"; // Substitua pelo número real
-  //   const message = "Olá! Gostaria de falar com um especialista sobre os serviços.";
-  //   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-  //     message
-  //   )}`;
-  //   window.open(whatsappUrl, "_blank");
-  // };
   const {openWhatsApp} = useWhatsApp();
 
   return (

@@ -16,11 +16,11 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 lg:w-12 lg:h-12">
               <Image
-                src="/logo_header.png"
+                src="/logo_header_.webp"
                 alt="logo"
                 width={48}
                 height={48}
-                priority={true}
+                priority
                 className="w-full h-auto"
                 sizes="(max-width: 768px) 40px, 48px"
               />
