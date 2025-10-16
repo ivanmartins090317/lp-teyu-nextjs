@@ -18,7 +18,9 @@ const Testimonials = () => {
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
-  const {openWhatsApp} = useWhatsApp();
+  const {openWhatsApp} = useWhatsApp({
+    defaultMessage: "Vamos agendar um horário?"
+  });
 
   React.useEffect(() => {
     if (!api) {
