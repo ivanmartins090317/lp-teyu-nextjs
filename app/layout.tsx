@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description:
       "Guardaria premium para surfistas. Organize suas pranchas, tenha mais tempo para o surfe. Serviços exclusivos em Santos-SP.",
     type: "website",
-    url: "https://teyu-surf.vercel.app/",
+    url: "https://www.teyusurf.com.br/",
     siteName: "Teyu Guardaria, Prancharia e Soul Surfers",
     locale: "pt_BR",
     countryName: "Brasil",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
       "@type": "LocalBusiness",
       name: "Teyu Guardaria, Prancharia e Soul Surfers",
       description: "Guardaria premium para surfistas",
-      url: "https://teyu-surf.vercel.app/"
+      url: "https://www.teyusurf.com.br/"
     }),
 
     // Meta tags adicionais
