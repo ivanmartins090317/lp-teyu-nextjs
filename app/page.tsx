@@ -25,8 +25,7 @@ const AboutTeyu = dynamic(() => import("./_components/landing/AboutTeyu"), {
 const ServicesOverview = dynamic(() => import("./_components/landing/ServicesOverview"), {
   loading: () => <div className="py-16 md:py-24 min-h-[400px]" />
 });
-
-const HowItWorks = dynamic(() => import("./_components/landing/HowItWorks"), {
+const ProductsOverview = dynamic(() => import("./_components/landing/ProductsOverview"), {
   loading: () => <div className="py-16 md:py-24 min-h-[400px]" />
 });
 
@@ -57,7 +56,7 @@ export default function Home() {
         <AboutUs />
         <AboutTeyu />
         <ServicesOverview />
-        <HowItWorks />
+        <ProductsOverview />
         {/* <VideoSection /> */}
         <Testimonials />
         <FinalCTA />
