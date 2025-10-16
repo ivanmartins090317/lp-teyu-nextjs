@@ -4,7 +4,7 @@
 import {Button} from "./ui/button";
 import {Share2} from "lucide-react";
 
-export function ShareButton() {
+export function ShareButton({children}: {children?: string}) {
   const handleShare = async () => {
     if (navigator.share) {
       try {
@@ -31,7 +31,7 @@ export function ShareButton() {
       className="gap-2 text-[#6a5c27] hover:shadow-lg shadow-[#6a5c27] transition duration-700 font-source font-medium text-sm xl:text-base relative group"
     >
       <Share2 size={16} />
-      Compartilhar
+      {children}
     </Button>
   );
 }

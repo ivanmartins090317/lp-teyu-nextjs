@@ -44,10 +44,10 @@ const Header = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a
-              href="#como-funciona"
+              href="#produtos"
               className="text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
-              Como Funciona
+              Produtos
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a
@@ -63,12 +63,33 @@ const Header = () => {
               rel="noopener noreferrer"
               className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
-              Previsão
+              Previsão de ondas
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a
+              href="#"
+              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
+            >
+              Blog
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a
+              href="#"
+              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
+            >
+              Escola de surfe parceira
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a
+              href="#"
+              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
+            >
+              Parceiros
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
           </nav>
           <div className="hidden lg:block">
-            <ShareButton />
+            <ShareButton></ShareButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -100,11 +121,11 @@ const Header = () => {
                 Serviços
               </a>
               <a
-                href="#como-funciona"
+                href="#produtos"
                 className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Como Funciona
+                Produtos
               </a>
               <a
                 href="#depoimentos"
@@ -115,13 +136,36 @@ const Header = () => {
               </a>
               <a
                 href="/forecast"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Previsão
+                Previsão de ondas
+              </a>
+              <a
+                href="#"
+                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </a>
+              <a
+                href="#"
+                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Escola de surfe parceira
+              </a>
+              <a
+                href="#"
+                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Parceiros
               </a>
 
-              <ShareButton />
+              <ShareButton>Compartilhar</ShareButton>
             </nav>
           </div>
         )}
