@@ -1,9 +1,18 @@
-import React from "react";
-import {LockKeyhole, Store} from "lucide-react";
+"use client";
+
+import React, {useState, lazy, Suspense} from "react";
 import {Card, CardContent, CardHeader, CardTitle} from "../shared/ui/card";
 import {Badge} from "../shared/ui/badge";
+import {LockKeyhole} from "lucide-react";
+import {Button} from "../shared/ui/button";
+
+// Lazy loading do modal - só carrega quando necessário
+const HowItWorksModal = lazy(() => import("./HowItWorksModal"));
 
 const ServicesOverview = () => {
+  // Estado para controlar abertura/fechamento do modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const serviceCategories = [
     {
       icon: LockKeyhole,
@@ -19,25 +28,20 @@ const ServicesOverview = () => {
       ],
       color: "bg-[#e3b653]/20",
       popular: false
-    },
-    {
-      icon: Store,
-      title: "Teyu Prancharia",
-      description:
-        "Local onde você encontra as melhores pranchas e acessórios para surfar.",
-      services: [
-        "Acessórios de Surfe",
-        "Acessórios de Praia",
-        "Bem Estar",
-        "Equipamentos de Surf",
-        "Pranchas Nova",
-        "Pranchas Usadas",
-        "Moda e vestuário"
-      ],
-      color: "bg-[#e3b653]/20",
-      popular: false
     }
   ];
+
+  // Handler para abrir o modal
+  const handleOpenModal = () => {
+    console.log("Abrindo modal Como Funciona");
+    setIsModalOpen(true);
+  };
+
+  // Handler para fechar o modal
+  const handleCloseModal = () => {
+    console.log("Fechando modal Como Funciona");
+    setIsModalOpen(false);
+  };
 
   return (
     <section id="servicos" className="py-16 md:py-24 bg-neutral-50">
@@ -48,12 +52,12 @@ const ServicesOverview = () => {
               Nossos Serviços
             </h2>
             <p className="font-source text-lg md:text-xl text-[#5f5f5e] max-w-3xl mx-auto leading-relaxed">
-              Mais de 15 tipos de serviços especializados para transformar sue dia de
-              surf. Tudo com a qualidade que você merece.
+              Soluções completas para guardar, reparo e cuidados da sua prancha.
+              Qualidade, praticidade e segurança reunidas em um só lugar.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid">
             {serviceCategories.map((category, index) => (
               <Card
                 key={index}
@@ -98,18 +102,25 @@ const ServicesOverview = () => {
                       ))}
                     </div>
                   </div>
+                  <div className="flex justify-center">
+                    <Button
+                      onClick={handleOpenModal}
+                      className="border border-[#6a5c27] text-[#6a5c27] hover:shadow-lg hover:shadow-[#6a5c27]/20"
+                    >
+                      Como Funciona?
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-          <div className="flex justify-center text-center text-[#6a5c27] mt-10">
-            <small>
-              *A nossa loja física (Teyu Prancharia) fica aberta ao público das 09:00 às
-              17:00. Não necessita marcar horário.
-            </small>
-          </div>
         </div>
       </div>
+
+      {/* Modal com Suspense para lazy loading */}
+      <Suspense fallback={null}>
+        <HowItWorksModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      </Suspense>
     </section>
   );
 };
