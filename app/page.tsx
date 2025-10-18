@@ -5,6 +5,9 @@ import Header from "./_components/shared/Header";
 import HeroSection from "./_components/landing/HeroSection";
 
 // Lazy loading dos componentes abaixo do fold
+const SurfSchool = dynamic(() => import("./_components/landing/SurfSchool"), {
+  loading: () => <div className="bg-[#6a5c27]/80 py-6 md:py-10 min-h-[100px]" />
+});
 const BenefitsScrolling = dynamic(
   () => import("./_components/landing/benefitsScrolling"),
   {
@@ -60,6 +63,7 @@ export default function Home() {
         <HowItWorks />
         {/* <VideoSection /> */}
         <Testimonials />
+        <SurfSchool />
         <FinalCTA />
       </div>
       <Footer />
