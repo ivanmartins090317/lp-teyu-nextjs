@@ -51,7 +51,7 @@ export default function AboutUs() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6a5c27] mb-6 font-source leading-tight animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-200">
                 Sobre nós
               </h2>
-
+              <p>sjkljkjdl</p>
               {/* Texto Principal */}
               <div className="space-y-4 text-gray-700 leading-relaxed animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-400">
                 <p className="text-base md:text-lg text-[#6a5c27]">
