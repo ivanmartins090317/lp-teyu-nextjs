@@ -3,10 +3,42 @@
 import React, {useState} from "react";
 import {Menu, X} from "lucide-react";
 import {ShareButton} from "./ShareButton";
+import {MobileServicesDropdown} from "./ui/mobile-services-dropdown";
+import {MobileProductsDropdown} from "./ui/mobile-products-dropdown";
+import dynamic from "next/dynamic";
 import Image from "next/image";
+
+// Lazy loading dos dropdowns - carrega só quando o usuário mostrar interesse
+const ServicesDropdown = dynamic(
+  () => import("./ui/services-dropdown").then((mod) => ({default: mod.ServicesDropdown})),
+  {
+    ssr: false,
+    loading: () => (
+      <span className="text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group flex items-center gap-1">
+        Serviços
+        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
+      </span>
+    )
+  }
+);
+
+const ProductsDropdown = dynamic(
+  () => import("./ui/products-dropdown").then((mod) => ({default: mod.ProductsDropdown})),
+  {
+    ssr: false,
+    loading: () => (
+      <span className="text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group flex items-center gap-1">
+        Produtos
+        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
+      </span>
+    )
+  }
+);
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
 
   return (
     <header className="bg-[#e5dfda] backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 border-b border-neutral-100">
@@ -33,23 +65,11 @@ const Header = () => {
               href="#sobre-nos"
               className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
-              Sobre nós
+              Sobre Nós
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a
-              href="#servicos"
-              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
-            >
-              Serviços
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a
-              href="#produtos"
-              className="text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
-            >
-              Produtos
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            <ServicesDropdown isDesktop={true}>Serviços</ServicesDropdown>
+            <ProductsDropdown isDesktop={true}>Produtos</ProductsDropdown>
             <a
               href="#depoimentos"
               className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
@@ -63,7 +83,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
-              Previsão de ondas
+              Previsão de Ondas
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a
@@ -77,7 +97,7 @@ const Header = () => {
               href="#"
               className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
-              Escola de surfe parceira
+              Escola de Surfe
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a
@@ -113,20 +133,20 @@ const Header = () => {
               >
                 Sobre nós
               </a>
-              <a
-                href="#servicos"
-                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Serviços
-              </a>
-              <a
-                href="#produtos"
-                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Produtos
-              </a>
+
+              {/* Dropdown de Serviços - Mobile */}
+              <MobileServicesDropdown
+                isOpen={mobileServicesOpen}
+                onToggle={() => setMobileServicesOpen(!mobileServicesOpen)}
+                onItemClick={() => setIsMenuOpen(false)}
+              />
+
+              {/* Dropdown de Produtos - Mobile */}
+              <MobileProductsDropdown
+                isOpen={mobileProductsOpen}
+                onToggle={() => setMobileProductsOpen(!mobileProductsOpen)}
+                onItemClick={() => setIsMenuOpen(false)}
+              />
               <a
                 href="#depoimentos"
                 className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
@@ -141,7 +161,7 @@ const Header = () => {
                 className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Previsão de ondas
+                Previsão de Ondas
               </a>
               <a
                 href="#"
@@ -155,7 +175,7 @@ const Header = () => {
                 className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Escola de surfe parceira
+                Escola de Surfe
               </a>
               <a
                 href="#"
