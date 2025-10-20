@@ -14,9 +14,9 @@ export default function AboutUs() {
               <div className="grid grid-cols-1 md:grid-cols-1 gap-6 lg:gap-8">
                 {/* Primeira imagem */}
                 <div className="relative group z-20 animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-500">
-                  <div className="md:w-[100%] absolute overflow-hidden rounded-2xl shadow-x z-10 right-4">
+                  <div className="md:w-[100%] absolute overflow-hidden rounded-2xl shadow-x z-10 left-4">
                     <Image
-                      src="/imagem_sobre_nos_02_.webp"
+                      src="https://plus.unsplash.com/premium_photo-1750439455684-aad246d40915?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=871"
                       alt="Nossa equipe - Foto 1"
                       width={1000}
                       height={500}
@@ -30,7 +30,7 @@ export default function AboutUs() {
 
                 {/* Segunda imagem */}
                 <div className="relative group md:mt-8 animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-700">
-                  <div className="relative overflow-hidden rounded-2xl shadow-xl ml-10 z-0">
+                  <div className="relative overflow-hidden rounded-2xl shadow-xl mr-10 z-0">
                     <Image
                       src="/pele_teyu_verdemusgo.svg"
                       alt="textura pele teyu"
@@ -49,11 +49,13 @@ export default function AboutUs() {
             <div className="flex-1 lg:pr-8 animate-initial-right-soft animate-slide-in-from-right-soft">
               {/* Título */}
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6a5c27] mb-6 font-source leading-tight animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-200">
-                Sobre nós
+                Escola de Surf Parceira
               </h2>
-
               {/* Texto Principal */}
               <div className="space-y-4 text-gray-700 leading-relaxed animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-400">
+                <p className="text-red-500">
+                  Pegar texto do Samuel explicando sobre a parceria.
+                </p>
                 <p className="text-base md:text-lg text-[#6a5c27]">
                   Guilherme Penteado Campos Filho, ou Gui, começou a surfar nos anos 70 no
                   Guarujá, mas foi em 2006, após um tempo afastado das ondas, que ele
