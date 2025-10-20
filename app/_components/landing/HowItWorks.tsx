@@ -3,13 +3,15 @@
 import React, {useRef} from "react";
 import {Smartphone, Calendar, UserCheck, Star} from "lucide-react";
 import Image from "next/image";
+import {Button} from "../shared/ui/button";
+import {useWhatsApp} from "@/app/_hooks/useWhatsApp";
 
 const HowItWorks = () => {
   // Criar referência para a seção de vídeo
   const videoSectionRef = useRef<HTMLElement>(null);
 
   const SHOW_VIDEO_SECTION = false; // TODO: Ativar quando tiver vídeo do cliente
-
+  const {openWhatsApp} = useWhatsApp();
   // Função usando useRef
   const handleVideoClick = () => {
     console.log("scrollIntoView");
@@ -139,6 +141,20 @@ const HowItWorks = () => {
                       {step.description}
                     </p>
                   </div>
+                  {step.title === "Agende o Horário" && (
+                    <div className="flex justify-center mt-6">
+                      <Button
+                        onClick={() =>
+                          openWhatsApp(
+                            "Eu quero entender melhor como funciona a Guardaria. Vamos agendar um horário?"
+                          )
+                        }
+                        className="border border-[#6a5c27] text-[#6a5c27] hover:shadow-lg hover:shadow-[#6a5c27]/20"
+                      >
+                        Chamar no WhatsApp
+                      </Button>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

@@ -1,64 +1,47 @@
-"use client";
-
-import React, {useState, lazy, Suspense} from "react";
+import React from "react";
 import {Card, CardContent, CardHeader, CardTitle} from "../shared/ui/card";
 import {Badge} from "../shared/ui/badge";
-import {LockKeyhole} from "lucide-react";
-import {Button} from "../shared/ui/button";
-
-// Lazy loading do modal - só carrega quando necessário
-const HowItWorksModal = lazy(() => import("./HowItWorksModal"));
+import {Store} from "lucide-react";
 
 const ServicesOverview = () => {
-  // Estado para controlar abertura/fechamento do modal
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const serviceCategories = [
+  const productsCategories = [
     {
-      icon: LockKeyhole,
-      title: "Teyu Guardaria",
-      description: "Local seguro para a sua pranchas e espaço para seus pertences.",
-      services: [
-        "Guardaria de Pranchas",
-        "Guarda Volumes/Lockers",
-        "Chuveiro",
-        "Reparo de Prancha",
-        "Uber reparo de prancha",
-        "Aulas de Surfe"
+      icon: Store,
+      title: "Teyu Prancharia",
+      description:
+        "Local onde você encontra as melhores pranchas e acessórios para surfar.",
+      products: [
+        "Acessórios de Surfe",
+        "Acessórios de Praia",
+        "Bem Estar",
+        "Equipamentos de Surf",
+        "Pranchas Nova",
+        "Pranchas Usadas",
+        "Moda e vestuário",
+        "Uber surfe"
       ],
       color: "bg-[#e3b653]/20",
       popular: false
     }
   ];
 
-  // Handler para abrir o modal
-  const handleOpenModal = () => {
-    console.log("Abrindo modal Como Funciona");
-    setIsModalOpen(true);
-  };
-
-  // Handler para fechar o modal
-  const handleCloseModal = () => {
-    console.log("Fechando modal Como Funciona");
-    setIsModalOpen(false);
-  };
-
   return (
-    <section id="servicos" className="py-16 md:py-24 bg-neutral-50">
+    <section id="produtos" className="py-16 md:py-24 bg-neutral-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-playfair font-bold text-3xl md:text-4xl lg:text-5xl text-[#6a5c27] mb-6">
-              Nossos Serviços
+              Nossos Produtos
             </h2>
             <p className="font-source text-lg md:text-xl text-[#5f5f5e] max-w-3xl mx-auto leading-relaxed">
-              Soluções completas para guardar, reparo e cuidados da sua prancha.
-              Qualidade, praticidade e segurança reunidas em um só lugar.
+              Encontre tudo o que você precisa em um só lugar.
+              <br /> A Teyu Prancharia oferece acessórios, pranchas, moda surf e produtos
+              de bem-estar com qualidade e preço camarada.
             </p>
           </div>
 
           <div className="grid">
-            {serviceCategories.map((category, index) => (
+            {productsCategories.map((category, index) => (
               <Card
                 key={index}
                 className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg relative animate-slide-up"
@@ -88,39 +71,34 @@ const ServicesOverview = () => {
 
                   <div className="space-y-2">
                     <div className="font-source font-semibold text-sm text-[#6a5c27] mb-3">
-                      Serviços inclusos:
+                      Produtos inclusos:
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {category.services.map((service, serviceIndex) => (
+                      {category.products.map((product, productIndex) => (
                         <Badge
-                          key={serviceIndex}
+                          key={productIndex}
                           variant="secondary"
-                          className="font-source text-xs bg-white text-[#5f5f5e] border border-neutral-200"
+                          className={`font-source text-xs bg-white text-[#5f5f5e] border border-neutral-200 ${
+                            product === "Uber surfe" ? "bg-[#71A2C1]/20" : ""
+                          }`}
                         >
-                          {service}
+                          {product}
                         </Badge>
                       ))}
                     </div>
-                  </div>
-                  <div className="flex justify-center">
-                    <Button
-                      onClick={handleOpenModal}
-                      className="border border-[#6a5c27] text-[#6a5c27] hover:shadow-lg hover:shadow-[#6a5c27]/20"
-                    >
-                      Como Funciona?
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+          <div className="flex justify-center text-center text-[#6a5c27] mt-10">
+            <small>
+              *A nossa loja física (Teyu Prancharia) fica aberta ao público das 09:00 às
+              17:00. Não necessita marcar horário.
+            </small>
+          </div>
         </div>
       </div>
-
-      {/* Modal com Suspense para lazy loading */}
-      <Suspense fallback={null}>
-        <HowItWorksModal isOpen={isModalOpen} onClose={handleCloseModal} />
-      </Suspense>
     </section>
   );
 };
