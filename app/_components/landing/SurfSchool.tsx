@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function AboutUs() {
   return (
     <section className="py-16 md:py-24 bg-[#e5dfda] overflow-hidden">
-      <div id="sobre-nos" />
+      <div id="escola" />
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex lg:flex-row flex-col gap-8 lg:gap-10 items-center">
@@ -53,32 +53,24 @@ export default function AboutUs() {
               </h2>
               {/* Texto Principal */}
               <div className="space-y-4 text-gray-700 leading-relaxed animate-initial-right-soft animate-slide-in-from-right-soft animate-delay-400">
-                <p className="text-red-500">
-                  Pegar texto do Samuel explicando sobre a parceria.
+                <p className="text-base md:text-lg text-[#6a5c27]">
+                  A parceria entre a Cisco Araña Surf School e a TEYU Guardaria nasceu com
+                  um objetivo simples: garantir que cada aluno viva a melhor experiência
+                  possível dentro e fora d’água. Cada um faz o que sabe de melhor, somando
+                  forças para deixar o surfe ainda mais fluido, seguro e organizado.
                 </p>
                 <p className="text-base md:text-lg text-[#6a5c27]">
-                  Guilherme Penteado Campos Filho, ou Gui, começou a surfar nos anos 70 no
-                  Guarujá, mas foi em 2006, após um tempo afastado das ondas, que ele
-                  redescobriu sua paixão pelo surf. Foi nesse retorno que ele conheceu
-                  Cisco Araña, mestre do longboard, e a partir daí, a conexão entre eles
-                  se fortaleceu. Cisco, com sua sabedoria, também apresentou Gui a Samuel
-                  Fragoas, outro grande amante do surf.
-                </p>
-                <p className="text-base md:text-lg text-[#6a5c27]">
-                  Samuel sempre teve o surf no coração, mas com o tempo, o esporte foi
-                  ficando em segundo plano. Sua vida tomou um novo rumo quando sua esposa
-                  matriculou seu filho na escola de Cisco Araña. Para acompanhar o filho
-                  nas aulas, Samuel decidiu voltar a surfar e, ao fazer isso, se
-                  reconectou com sua verdadeira paixão. A amizade entre os três se
-                  fortaleceu, e essa conexão profunda com o surf se transformou em algo
-                  muito maior do que esporte – virou uma filosofia de vida.
+                  A Cisco Araña Surf School é a única e exclusiva responsável pela
+                  metodologia das aulas, bem como pela condução pedagógica e técnica,
+                  sempre com instrutores de surfe qualificados e certificados pelo próprio
+                  Cisco Araña, assegurando ensino de alto nível e evolução constante.
                 </p>
 
                 <p className="text-base md:text-lg text-[#6a5c27]">
-                  Juntos, Gui e Samuel criaram a Teyu, um espaço que reflete tudo o que
-                  acreditam sobre o surf: uma experiência única de conexão com o mar,
-                  muito mais que simples ondas, mas um estilo de vida que une família,
-                  amigos e a busca constante pelo equilíbrio e pela paz.
+                  Já a TEYU Guardaria cuida da base: oferece a infraestrutura física, a
+                  guarda segura de pranchas e acessórios, além do apoio administrativo,
+                  incluindo o agendamento das aulas — para que você só precise se
+                  preocupar em pegar a próxima onda.
                 </p>
               </div>
             </div>

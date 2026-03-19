@@ -197,6 +197,17 @@ const Footer = () => {
                 <div>Domingos: 8h às 12h</div>
               </div>
             </div>
+            {/* SUGESTÕES E RECLAMAÇÕES */}
+            <div className="space-y-2">
+              <div className="font-source font-semibold text-sm">
+                Sugestões e reclamações:
+              </div>
+              <div className="font-source text-sm text-neutral-300">
+                <a href="mailto:teyusurf@gmail.com?subject=Sugest%C3%A3o%20ou%20Coment%C3%A1rio&body=Ol%C3%A1%2C%20gostaria%20de%20enviar%20uma%20sugest%C3%A3o...">
+                  Enviar sugestão
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 

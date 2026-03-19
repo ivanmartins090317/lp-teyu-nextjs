@@ -88,24 +88,24 @@ const Header = () => {
             </a>
             <a
               href="#"
-              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
+              className=" text-[#5f5f5e]/30 hover:text-[#6a5c27]/30 transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
               Blog
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27]/30 transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a
-              href="#"
+              href="#escola"
               className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
               Escola de Surfe
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a
-              href="#"
-              className=" text-[#5f5f5e] hover:text-[#6a5c27] transition-colors font-source font-medium text-sm xl:text-base relative group"
+              href="#parceiro"
+              className=" text-[#5f5f5e]/30 hover:text-[#6a5c27]/30 transition-colors font-source font-medium text-sm xl:text-base relative group"
             >
               Parceiros
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6a5c27]/30 transition-all duration-300 group-hover:w-full"></span>
             </a>
           </nav>
           <div className="hidden lg:block">
@@ -165,13 +165,13 @@ const Header = () => {
               </a>
               <a
                 href="#"
-                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
+                className="text-[#6a5c27]30 hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blog
               </a>
               <a
-                href="#"
+                href="#escola"
                 className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -179,7 +179,7 @@ const Header = () => {
               </a>
               <a
                 href="#"
-                className="text-[#6a5c27] hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
+                className="text-[#6a5c27]/30 hover:text-primary hover:bg-[#e5dfda] transition-all font-source font-medium py-3 px-4 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Parceiros
