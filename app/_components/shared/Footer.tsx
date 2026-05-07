@@ -77,14 +77,6 @@ const Footer = () => {
                   href="#servicos"
                   className="hover:text-[#servicose3b653] transition-colors"
                 >
-                  Guardaria de volumes / lockers
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#servicos"
-                  className="hover:text-[#servicose3b653] transition-colors"
-                >
                   Reparos de pranchas
                 </a>
               </li>
@@ -115,12 +107,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#servicos" className="hover:text-gold transition-colors">
-                  Pranchas nova
-                </a>
-              </li>
-              <li>
-                <a href="#servicos" className="hover:text-gold transition-colors">
-                  Pranchas usadas
+                  Pranchas
                 </a>
               </li>
               <li>
@@ -224,9 +211,6 @@ const Footer = () => {
               </a>
               <a href="#" className="hover:text-gold transition-colors">
                 Termos de Uso
-              </a>
-              <a href="#" className="hover:text-gold transition-colors">
-                Cookies
               </a>
             </div>
           </div>
