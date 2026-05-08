@@ -6,6 +6,8 @@
 #   SFTP_USERNAME      — usuário cPanel / SSH
 #   SFTP_PASSWORD      — senha SSH (recomendado: senha forte só para deploy)
 #   SFTP_REMOTE_PATH   — caminho absoluto com barra final, ex.: /home1/USUARIO/public_html/
+#   NEXT_PUBLIC_SUPABASE_URL      — mesma URL do .env local (necessária no build)
+#   NEXT_PUBLIC_SUPABASE_ANON_KEY — mesma chave anon do .env local (necessária no build)
 #
 # Porta SSH: padrão 22. Se a HostGator usar outra (ex.: 2222), defina a variável de repositório SFTP_DEPLOY_PORT (Settings → Secrets and variables → Actions → Variables) sem alterar este arquivo.
 
@@ -36,6 +38,9 @@ jobs:
           cache: npm
 
       - name: Install and build (export estático)
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
         run: |
           npm ci
           npm run build:cpanel
