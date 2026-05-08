@@ -6,6 +6,11 @@ import {supabase} from "@/app/_integrations/supabase/client";
  * Executada automaticamente a cada 3 dias pelo Vercel Cron
  * Faz uma query simples para evitar que o projeto seja pausado
  */
+// Compatibilidade com `next.config.js` em modo `output: "export"`.
+// O Next exige `revalidate` quando `dynamic` é forçado como estático no build export.
+export const dynamic = "force-static";
+export const revalidate = 0;
+
 export async function GET(request: Request) {
   try {
     // Verificar autorização (apenas o cron da Vercel pode chamar)
