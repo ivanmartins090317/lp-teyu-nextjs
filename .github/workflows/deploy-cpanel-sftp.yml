@@ -2,12 +2,15 @@
 # Ajuste a porta se a conexão falhar: HostGator compartilhada costuma usar 22 ou 2222 (veja cPanel → Acesso SSH).
 #
 # Secrets obrigatórios (Settings → Secrets and variables → Actions):
-#   SFTP_HOST          — ex.: sh-pro72.hostgator.com.br
-#   SFTP_USERNAME      — usuário cPanel / SSH
-#   SFTP_PASSWORD      — senha SSH (recomendado: senha forte só para deploy)
-#   SFTP_REMOTE_PATH   — caminho absoluto com barra final, ex.: /home1/USUARIO/public_html/
-#   NEXT_PUBLIC_SUPABASE_URL      — mesma URL do .env local (necessária no build)
+#   SFTP_HOST                 — ex.: sh-pro72.hostgator.com.br
+#   SFTP_USERNAME             — usuário cPanel / SSH
+#   SFTP_SSH_PRIVATE_KEY     — private key do deploy (conteúdo "BEGIN OPENSSH PRIVATE KEY ... END ...")
+#   SFTP_REMOTE_PATH          — caminho absoluto com barra final, ex.: /home1/USUARIO/public_html/
+#   NEXT_PUBLIC_SUPABASE_URL — mesma URL do .env local (necessária no build)
 #   NEXT_PUBLIC_SUPABASE_ANON_KEY — mesma chave anon do .env local (necessária no build)
+#
+# (Opcional) Se sua chave tiver passphrase:
+#   SFTP_SSH_PASSPHRASE
 #
 # Porta SSH: padrão 22. Se a HostGator usar outra (ex.: 2222), defina a variável de repositório SFTP_DEPLOY_PORT (Settings → Secrets and variables → Actions → Variables) sem alterar este arquivo.
 
@@ -50,7 +53,8 @@ jobs:
         with:
           host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
+          key: ${{ secrets.SFTP_SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SFTP_SSH_PASSPHRASE }}
           port: ${{ vars.SFTP_DEPLOY_PORT || '22' }}
           source: "out/"
           target: ${{ secrets.SFTP_REMOTE_PATH }}
