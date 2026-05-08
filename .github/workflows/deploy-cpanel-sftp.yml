@@ -1,0 +1,54 @@
+# Deploy estático (pasta out/) para cPanel via SSH/SCP — equivalente em segurança ao SFTP (mesmo transporte criptografado).
+# Ajuste a porta se a conexão falhar: HostGator compartilhada costuma usar 22 ou 2222 (veja cPanel → Acesso SSH).
+#
+# Secrets obrigatórios (Settings → Secrets and variables → Actions):
+#   SFTP_HOST          — ex.: sh-pro72.hostgator.com.br
+#   SFTP_USERNAME      — usuário cPanel / SSH
+#   SFTP_PASSWORD      — senha SSH (recomendado: senha forte só para deploy)
+#   SFTP_REMOTE_PATH   — caminho absoluto com barra final, ex.: /home1/USUARIO/public_html/
+#
+# Porta SSH: padrão 22. Se a HostGator usar outra (ex.: 2222), defina a variável de repositório SFTP_DEPLOY_PORT (Settings → Secrets and variables → Actions → Variables) sem alterar este arquivo.
+
+name: Deploy cPanel (SSH/SCP)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-cpanel-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install and build (export estático)
+        run: |
+          npm ci
+          npm run build:cpanel
+
+      - name: Deploy para public_html (SCP sobre SSH)
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: ${{ vars.SFTP_DEPLOY_PORT || '22' }}
+          source: "out/"
+          target: ${{ secrets.SFTP_REMOTE_PATH }}
+          strip_components: 1
+          overwrite: true
+          # rm: true apagaria TODO o destino antes — não ative em public_html com arquivos que não vêm do repo (ex.: PDFs só no servidor).
